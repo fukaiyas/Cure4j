@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cure4j">
+    <output-path>$PROJECT_DIR$/out/artifacts/cure4j</output-path>
+    <root id="archive" name="cure4j.jar">
+      <element id="module-output" name="Cure4j_main" />
+    </root>
+  </artifact>
+</component>
