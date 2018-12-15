@@ -107,12 +107,12 @@ public class Listream<T> implements List<T>, Stream<T> {
     }
 
     @Override
-    public Stream<T> filter(Predicate<? super T> predicate) {
+    public Listream<T> filter(Predicate<? super T> predicate) {
         return st(s -> s.filter(predicate));
     }
 
     @Override
-    public <R> Stream<R> map(Function<? super T, ? extends R> mapper) {
+    public <R> Listream<R> map(Function<? super T, ? extends R> mapper) {
         return st(s -> s.map(mapper));
     }
 
@@ -132,7 +132,7 @@ public class Listream<T> implements List<T>, Stream<T> {
     }
 
     @Override
-    public <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper) {
+    public <R> Listream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper) {
         return st(s -> s.flatMap(mapper));
     }
 
@@ -152,42 +152,42 @@ public class Listream<T> implements List<T>, Stream<T> {
     }
 
     @Override
-    public Stream<T> distinct() {
+    public Listream<T> distinct() {
         return st(Stream::distinct);
     }
 
     @Override
-    public Stream<T> sorted() {
+    public Listream<T> sorted() {
         return st(Stream::sorted);
     }
 
     @Override
-    public Stream<T> sorted(Comparator<? super T> comparator) {
+    public Listream<T> sorted(Comparator<? super T> comparator) {
         return st(s -> sorted(comparator));
     }
 
     @Override
-    public Stream<T> peek(Consumer<? super T> action) {
+    public Listream<T> peek(Consumer<? super T> action) {
         return st(s -> s.peek(action));
     }
 
     @Override
-    public Stream<T> limit(long maxSize) {
+    public Listream<T> limit(long maxSize) {
         return st(s -> s.limit(maxSize));
     }
 
     @Override
-    public Stream<T> skip(long n) {
+    public Listream<T> skip(long n) {
         return st(s -> s.skip(n));
     }
 
     @Override
-    public Stream<T> takeWhile(Predicate<? super T> predicate) {
+    public Listream<T> takeWhile(Predicate<? super T> predicate) {
         return st(s -> s.takeWhile(predicate));
     }
 
     @Override
-    public Stream<T> dropWhile(Predicate<? super T> predicate) {
+    public Listream<T> dropWhile(Predicate<? super T> predicate) {
         return st(s -> s.dropWhile(predicate));
     }
 
