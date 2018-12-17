@@ -23,6 +23,8 @@ public class GirlsLoader {
 
             entry("cure_bloom", CureBloom.class),
             entry("cure_egret", CureEgret.class),
+            entry("cure_bright", CureBright.class),
+            entry("cure_windy", CureWindy.class),
 
             entry("milky_rose", MilkyRose.class),
 
@@ -102,7 +104,7 @@ public class GirlsLoader {
         try {
             return girlClass.getConstructor(Map.class).newInstance(config);
         }catch(Exception e){
-            throw new RuntimeException(e);//TODO
+            throw new RuntimeException(e);
         }
     }
 
