@@ -1,5 +1,6 @@
 package cure4j.girls;
 
+import cure4j.internal.GirlsLoader;
 import cure4j.util.PrecureColor;
 import cure4j.util.LinkleStone;
 import cure4j.util.Listream;
@@ -32,6 +33,10 @@ public abstract class Girl {
         this.birthday = (String)config.get("birthday");
         this.extraNames = new Listream<String>((List<String>)config.get("extra_names"));
         this.transformCalls = new Listream<String>((List<String>)config.get("transform_calls"));
+    }
+
+    public static <T extends Girl> T byName(String girlName){
+        return(T) GirlsLoader.get(girlName);
     }
 
     public abstract String girlName();

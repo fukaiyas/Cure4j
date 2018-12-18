@@ -26,6 +26,11 @@ public class GirlsLoader {
             entry("cure_bright", CureBright.class),
             entry("cure_windy", CureWindy.class),
 
+            entry("cure_dream", CureDream.class),
+            entry("cure_rouge", CureRouge.class),
+            entry("cure_lemonade", CureLemonade.class),
+            entry("cure_mint", CureMint.class),
+            entry("cure_aqua", CureAqua.class),
             entry("milky_rose", MilkyRose.class),
 
             entry("cure_blossom", CureBlossom.class),

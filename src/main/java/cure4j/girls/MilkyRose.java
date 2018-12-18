@@ -19,4 +19,10 @@ public class MilkyRose extends Girl.StandardGirl {
         super.transform();
         return this;
     }
+
+    public MilkyRose skyRoseTranslate(){
+        return transform();
+    }
+
+    //TODO translateのみでも変身したことがある？
 }
