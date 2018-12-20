@@ -1,13 +1,13 @@
 package cure4j.girls;
 
-import cure4j.util.LinkleStone;
+import cure4j.util.LinkleStoneMiracleMagical;
 
 import java.util.Map;
 
 public class CureMagical extends Girl.MahoGirl {
 
     public CureMagical(Map<String, Object> config) {
-        super(config);
+        super(config, LinkleStoneMiracleMagical.values());
     }
 
     @Override
@@ -16,14 +16,12 @@ public class CureMagical extends Girl.MahoGirl {
         return this;
     }
 
-    @Override
-    public CureMagical transform(LinkleStone linkleStone){
-        super.transform(linkleStone);
+    public CureMagical transform(LinkleStoneMiracleMagical linkleStoneMiracleMagical){
+        super.transform(linkleStoneMiracleMagical);
         return this;
     }
 
-    @Override
-    public CureMagical cureUpRapapa(LinkleStone linkleStone){
-        return transform(linkleStone);
+    public CureMagical cureUpRapapa(LinkleStoneMiracleMagical linkleStoneMiracleMagical){
+        return transform(linkleStoneMiracleMagical);
     }
 }

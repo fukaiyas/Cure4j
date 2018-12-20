@@ -1,15 +1,13 @@
 package cure4j.girls;
 
 import cure4j.internal.GirlsLoader;
-import cure4j.util.PrecureColor;
 import cure4j.util.LinkleStone;
+import cure4j.util.LinkleStoneMiracleMagical;
+import cure4j.util.PrecureColor;
 import cure4j.util.Listream;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class Girl {
 
@@ -198,7 +196,7 @@ public abstract class Girl {
         protected final Listream<String> transformMessages;
         protected final Listream<String> attackMessages;
 
-        public MahoGirl(Map<String, Object> config){
+        public MahoGirl(Map<String, Object> config, LinkleStone[] linkleStones){
             super(config);
             Map<String, Object> styles = (Map<String, Object>)config.get("transform_styles");
             List<String> girlNamesList = new ArrayList<>();
@@ -210,18 +208,20 @@ public abstract class Girl {
             //変身前(index=0)
             girlNamesList.add((String)config.get("girl_name"));
             precureNamesList.add((String)config.get("precure_name"));
-            colorsList.add(PrecureColor.valueOf(config.get("color").toString().toUpperCase()));
+            PrecureColor defaultColor = PrecureColor.valueOf(config.get("color").toString().toUpperCase());
+            colorsList.add(defaultColor);
             createdDatesList.add((LocalDate)config.get("created_date"));
             transformMessagesList.add("");//変身前なのでない
-            attackMessagesList.add("");//変身前なのでない
+            //attack_messageはインデックス調整が入るので変身前用は不要
             //変身後 LinkleStoneで指定したindex順に保持
-            Arrays.stream(LinkleStone.values())
+            Arrays.stream(linkleStones)
                     .sorted((l1, l2) -> l1.index() - l2.index())
                     .map(l -> (Map<String, Object>)styles.get(l.configKey()))
                     .forEachOrdered(m -> {
                         girlNamesList.add((String)m.get("girl_name"));
                         precureNamesList.add((String)m.get("precure_name"));
-                        colorsList.add(PrecureColor.valueOf(m.get("color").toString().toUpperCase()));
+                        String color = (String)m.get("color");
+                        colorsList.add(color == null ? defaultColor : PrecureColor.valueOf(color.toUpperCase()));
                         createdDatesList.add((LocalDate)m.get("created_date"));
                         transformMessagesList.add((String)m.get("transform_message"));
                         attackMessagesList.addAll((List<String>)m.get("attack_messages"));
@@ -269,14 +269,9 @@ public abstract class Girl {
             return transformMessages.get(current);
         }
 
-        public MahoGirl transform(LinkleStone linkleStone){
+        protected void transform(LinkleStone linkleStone){
             current = linkleStone.index();
             printByLine(transformMessages.get(current));
-            return this;
-        }
-
-        public MahoGirl cureUpRapapa(LinkleStone linkleStone){
-            return transform(linkleStone);
         }
 
         @Override

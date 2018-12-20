@@ -32,6 +32,7 @@ public final class Cure4j {
 
         public static final CureMiracle miracle = GirlsLoader.get("cure_miracle");
         public static final CureMagical magical = GirlsLoader.get("cure_magical");
+        public static final CureFelice felice = GirlsLoader.get("cure_felice");
     }
 
     public static final class Shiny {
