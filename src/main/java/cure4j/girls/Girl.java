@@ -9,7 +9,7 @@ import cure4j.util.Listream;
 import java.time.LocalDate;
 import java.util.*;
 
-public abstract class Girl {
+public abstract class Girl <G extends Girl<G>>{
 
     public static long sleepSec = 1;
 
@@ -81,9 +81,9 @@ public abstract class Girl {
         return birthday != null;
     }
 
-    public Girl humanize(){
+    public G humanize(){
         current = 0;
-        return this;
+        return (G)this;
     }
 
     public void attack(){
@@ -112,7 +112,7 @@ public abstract class Girl {
         System.out.println(message);
     }
 
-    public static class StandardGirl extends Girl{
+    public static class StandardGirl<G extends StandardGirl<G>> extends Girl<StandardGirl<G>>{
 
         protected final String girlName;
         protected final String precureName;
@@ -165,12 +165,12 @@ public abstract class Girl {
             return attackMessages;
         }
 
-        public StandardGirl transform(){
+        public G transform(){
             current = (current + 1) % allNames.size();
             if(current == 1){
                 printByLine(transformMessage);
             }
-            return this;
+            return (G)this;
         }
 
         @Override
@@ -187,7 +187,7 @@ public abstract class Girl {
         }
     }
 
-    public static class MahoGirl extends Girl{
+    public static class MahoGirl<G extends MahoGirl<G>> extends Girl<MahoGirl<G>>{
 
         protected final Listream<String> girlNames;
         protected final Listream<String> precureNames;
@@ -269,9 +269,10 @@ public abstract class Girl {
             return transformMessages.get(current);
         }
 
-        protected void transform(LinkleStone linkleStone){
+        protected G transform(LinkleStone linkleStone){
             current = linkleStone.index();
             printByLine(transformMessages.get(current));
+            return (G)this;
         }
 
         @Override
