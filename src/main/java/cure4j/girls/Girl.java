@@ -14,9 +14,9 @@ public abstract class Girl <G extends Girl<G>>{
     public static long sleepSec = 1;
 
     protected final String humanName;
-    protected final String humanFullName;
+    protected final Optional<String> humanFullName;
     protected final String castName;
-    protected final String birthday;
+    protected final Optional<String> birthday;
     protected final Listream<String> extraNames;
     protected final Listream<String> transformCalls;
 
@@ -26,9 +26,9 @@ public abstract class Girl <G extends Girl<G>>{
 
     public Girl(Map<String, Object> config) {
         this.humanName = (String)config.get("human_name");
-        this.humanFullName = (String)config.get("human_full_name");
+        this.humanFullName = Optional.ofNullable((String)config.get("human_full_name"));
         this.castName = (String)config.get("cast_name");
-        this.birthday = (String)config.get("birthday");
+        this.birthday = Optional.ofNullable((String)config.get("birthday"));
         this.extraNames = new Listream<String>((List<String>)config.get("extra_names"));
         this.transformCalls = new Listream<String>((List<String>)config.get("transform_calls"));
     }
@@ -50,7 +50,7 @@ public abstract class Girl <G extends Girl<G>>{
     }
 
     public String humanFullName() {
-        return humanFullName;
+        return humanFullName.orElse(humanName);
     }
 
     public String castName() {
@@ -58,7 +58,7 @@ public abstract class Girl <G extends Girl<G>>{
     }
 
     public String birthday() {
-        return birthday;
+        return birthday.orElse("No official data.");
     }
 
     public Listream<String> extraNames(){
