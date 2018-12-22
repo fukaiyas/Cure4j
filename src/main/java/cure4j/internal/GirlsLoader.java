@@ -33,6 +33,11 @@ public class GirlsLoader {
             entry("cure_aqua", CureAqua.class),
             entry("milky_rose", MilkyRose.class),
 
+            entry("cure_peach", CurePeach.class),
+            entry("cure_berry", CureBerry.class),
+            entry("cure_pine", CurePine.class),
+            entry("cure_passion", CurePassion.class),
+
             entry("cure_blossom", CureBlossom.class),
             entry("cure_marine", CureMarine.class),
             entry("cure_sunshine", CureSunshine.class),
@@ -95,8 +100,7 @@ public class GirlsLoader {
                             .filter(es -> !GIRL_CLASSES.containsKey(es.getKey()))
                             .collect(Collectors.toMap(
                                     es -> es.getKey(),
-//                                    es -> result.get(es.getValue().get("girl_name"))
-                                    es -> result.get("cure_black")
+                                    es -> result.getOrDefault(es.getValue().get("girl_name"), result.get("cure_black"))
                             ))
                     );
                 }

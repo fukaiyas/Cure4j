@@ -90,7 +90,7 @@ public abstract class Girl <G extends Girl<G>>{
         if(current == 0){
             throw new RequireTransformException("Require transform.");
         }
-        printByLine(attackMessages().get(current - 1));
+        printByLine(attackMessages().get(Math.min(current, attackMessages().size()) - 1));
     }
 
     @Override

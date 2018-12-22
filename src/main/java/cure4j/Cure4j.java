@@ -25,6 +25,11 @@ public final class Cure4j {
         public static final CureMint mint = GirlsLoader.get("cure_mint");
         public static final CureAqua aqua = GirlsLoader.get("cure_aqua");
 
+        public static final CurePeach peach = GirlsLoader.get("cure_peach");
+        public static final CureBerry berry = GirlsLoader.get("cure_berry");
+        public static final CurePine pine = GirlsLoader.get("cure_pine");
+        public static final CurePassion passion = GirlsLoader.get("cure_passion");
+
         public static final CureBlossom blossom = GirlsLoader.get("cure_blossom");
         public static final CureMarine marine = GirlsLoader.get("cure_marine");
         public static final CureSunshine sunshine = GirlsLoader.get("cure_sunshine");
