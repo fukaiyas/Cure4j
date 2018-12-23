@@ -30,6 +30,7 @@ public class PrecureSeries extends Series {
     public final Series mahoGirls = SeriesLoader.get("maho_girls");
     public final Series aLaMode = SeriesLoader.get("a_la_mode");
     public final Series hugtto = SeriesLoader.get("hugtto");
+
     public Series getSeries(String seriesName){
         return SeriesLoader.get(seriesName);
     }
@@ -57,6 +58,9 @@ public class PrecureSeries extends Series {
         return current();
     }
     public Series current(){
-        return null;
+        return series.filter(Series::isOnAir)
+                .findFirst()
+                .orElseThrow(() -> new NotOnAirException("Not on air precure!"));
     }
+
 }

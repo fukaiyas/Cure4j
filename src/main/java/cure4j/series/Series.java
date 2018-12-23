@@ -47,7 +47,7 @@ public class Series {
 
     @Override
     public String toString(){
-        return seriesName;
+        return title;
     }
     @Override
     public int hashCode(){
