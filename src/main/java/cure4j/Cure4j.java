@@ -35,6 +35,11 @@ public final class Cure4j {
         public static final CureSunshine sunshine = GirlsLoader.get("cure_sunshine");
         public static final CureMoonlight moonlight = GirlsLoader.get("cure_moonlight");
 
+        public static final CureMelody melody = GirlsLoader.get("cure_melody");
+        public static final CureRhythm rhythm = GirlsLoader.get("cure_rhythm");
+        public static final CureBeat beat = GirlsLoader.get("cure_beat");
+        public static final CureMuse muse = GirlsLoader.get("cure_muse");
+
         public static final CureMiracle miracle = GirlsLoader.get("cure_miracle");
         public static final CureMagical magical = GirlsLoader.get("cure_magical");
         public static final CureFelice felice = GirlsLoader.get("cure_felice");
