@@ -12,6 +12,12 @@ public class Listream<T> implements List<T>, Stream<T> {
     public Listream(){
         this(new ArrayList<>());
     }
+    public Listream(List<? extends T>... lists){
+        this.list = Arrays.stream(lists)
+                .flatMap(list -> list.stream())
+                .collect(Collectors.toList());
+
+    }
     public Listream(List<? extends T> list){
         this.list = list == null ? new ArrayList<>() : new ArrayList<>(list);
     }

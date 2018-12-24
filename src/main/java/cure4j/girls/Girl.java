@@ -11,7 +11,7 @@ import java.util.*;
 
 public abstract class Girl <G extends Girl<G>>{
 
-    public static long sleepSec = 1;
+    public static double sleepSec = 1;
 
     protected final String humanName;
     protected final Optional<String> humanFullName;
@@ -105,7 +105,7 @@ public abstract class Girl <G extends Girl<G>>{
 
     private static void sleepAndPrint(String message){
         try {
-            Thread.sleep(sleepSec * 1000);
+            Thread.sleep((long)sleepSec * 1000);
         } catch (InterruptedException e) {
             //ignore
         }

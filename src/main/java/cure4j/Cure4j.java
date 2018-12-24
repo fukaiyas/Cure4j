@@ -40,6 +40,12 @@ public final class Cure4j {
         public static final CureBeat beat = GirlsLoader.get("cure_beat");
         public static final CureMuse muse = GirlsLoader.get("cure_muse");
 
+        public static final CureHappy happy = GirlsLoader.get("cure_happy");
+        public static final CureSunny sunny = GirlsLoader.get("cure_sunny");
+        public static final CurePeace peace = GirlsLoader.get("cure_peace");
+        public static final CureMarch march = GirlsLoader.get("cure_march");
+        public static final CureBeauty beauty = GirlsLoader.get("cure_beauty");
+
         public static final CureMiracle miracle = GirlsLoader.get("cure_miracle");
         public static final CureMagical magical = GirlsLoader.get("cure_magical");
         public static final CureFelice felice = GirlsLoader.get("cure_felice");
