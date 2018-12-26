@@ -46,6 +46,12 @@ public final class Cure4j {
         public static final CureMarch march = GirlsLoader.get("cure_march");
         public static final CureBeauty beauty = GirlsLoader.get("cure_beauty");
 
+        public static final CureHeart heart = GirlsLoader.get("cure_heart");
+        public static final CureDiamond diamond = GirlsLoader.get("cure_diamond");
+        public static final CureRosetta rosetta = GirlsLoader.get("cure_rosetta");
+        public static final CureSword sword = GirlsLoader.get("cure_sword");
+        public static final CureAce ace = GirlsLoader.get("cure_ace");
+
         public static final CureMiracle miracle = GirlsLoader.get("cure_miracle");
         public static final CureMagical magical = GirlsLoader.get("cure_magical");
         public static final CureFelice felice = GirlsLoader.get("cure_felice");
