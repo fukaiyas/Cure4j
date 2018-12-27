@@ -60,6 +60,11 @@ public class GirlsLoader {
             entry("cure_sword", CureSword.class),
             entry("cure_ace", CureAce.class),
 
+            entry("cure_lovely", CureLovely.class),
+            entry("cure_princess", CurePrincess.class),
+            entry("cure_honey", CureHoney.class),
+            entry("cure_fortune", CureFortune.class),
+
             entry("cure_miracle", CureMiracle.class),
             entry("cure_magical", CureMagical.class),
             entry("cure_felice", CureFelice.class)
@@ -134,53 +139,4 @@ public class GirlsLoader {
             throw new RuntimeException(e);
         }
     }
-
-
-
-
-
-//    private static class PathAndName{
-//        private final String path;
-//        private final String name;
-//        private PathAndName(String path, String name){
-//            this.path = path;
-//            this.name = name;
-//        }
-//    }
-//    private static final Map<Class<? extends Girl>, PathAndName> PATH_AND_NAMES = Map.of(
-//            CureBlack.class, new PathAndName("/girls/001_unmarked.yml", "cure_black"),
-//            CureWhite.class, new PathAndName("/girls/001_unmarked.yml", "cure_white"),
-//            ShinyLuminous.class, new PathAndName("/girls/002_max_heart.yml", "shiny_luminous"),
-//
-//            MilkyRose.class, new PathAndName("/girls/005_yes_gogo.yml", "milky_rose"),
-//
-//            CureMarine.class, new PathAndName("/girls/007_heart_catch.yml", "cure_marine")
-//    );
-//    private static final Map<String, Map<String, Object>> CONIFG_CACHE = new HashMap<>();
-//
-//    static{
-//        PATH_AND_NAMES.keySet().stream().forEach(GirlsLoader::load);
-//    }
-//
-//    public static synchronized <T extends Girl> T load(Class<T> girlClass){
-//        PathAndName pathAndName = PATH_AND_NAMES.get(girlClass);
-//        if(GIRL_INSTANCE.containsKey(pathAndName.name)){
-//            return (T)GIRL_INSTANCE.get(pathAndName.name);
-//        }
-//        try{
-//            if(!CONIFG_CACHE.containsKey(pathAndName.path)){
-//                try(Reader reader = new InputStreamReader(
-//                        GirlsLoader.class.getResourceAsStream(pathAndName.path), Charset.forName("UTF-8"))){
-//                    CONIFG_CACHE.put(pathAndName.path, new Yaml(new LocalDateConstructor()).load(reader));
-//                }
-//            }
-//            Constructor<T> cons = girlClass.getConstructor(Map.class);
-//            T girl = cons.newInstance(CONIFG_CACHE.get(pathAndName.path).get(pathAndName.name));
-//            GIRL_INSTANCE.put(pathAndName.name, girl);
-//            return girl;
-//
-//        }catch(Exception e){
-//            throw new RuntimeException("Unknown exception.", e);
-//        }
-//    }
 }
