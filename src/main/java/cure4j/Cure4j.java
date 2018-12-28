@@ -57,6 +57,11 @@ public final class Cure4j {
         public static final CureHoney honey = GirlsLoader.get("cure_honey");
         public static final CureFortune fortune = GirlsLoader.get("cure_fortune");
 
+        public static final CureFlora flora = GirlsLoader.get("cure_flora");
+        public static final CureMermaid mermaid = GirlsLoader.get("cure_mermaid");
+        public static final CureTwinkle twinkle = GirlsLoader.get("cure_twinkle");
+        public static final CureScarlet scarlet = GirlsLoader.get("cure_scarlet");
+
         public static final CureMiracle miracle = GirlsLoader.get("cure_miracle");
         public static final CureMagical magical = GirlsLoader.get("cure_magical");
         public static final CureFelice felice = GirlsLoader.get("cure_felice");
