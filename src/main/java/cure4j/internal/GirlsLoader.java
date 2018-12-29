@@ -72,7 +72,14 @@ public class GirlsLoader {
 
             entry("cure_miracle", CureMiracle.class),
             entry("cure_magical", CureMagical.class),
-            entry("cure_felice", CureFelice.class)
+            entry("cure_felice", CureFelice.class),
+
+            entry("cure_whip", CureWhip.class),
+            entry("cure_custard", CureCustard.class),
+            entry("cure_gelato", CureGelato.class),
+            entry("cure_macaron", CureMacaron.class),
+            entry("cure_chocolat", CureChocolat.class),
+            entry("cure_parfait", CureParfait.class)
     );
     private static Map.Entry<String, Class<? extends Girl>> entry(String girlName, Class<? extends Girl> girlClass){
         return new AbstractMap.SimpleImmutableEntry<>(girlName, girlClass);
