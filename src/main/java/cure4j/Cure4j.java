@@ -72,6 +72,12 @@ public final class Cure4j {
         public static final CureMacaron macaron = GirlsLoader.get("cure_macaron");
         public static final CureChocolat chocolat = GirlsLoader.get("cure_chocolat");
         public static final CureParfait parfait = GirlsLoader.get("cure_parfait");
+
+        public static final CureYell yell = GirlsLoader.get("cure_yell");
+        public static final CureAnge ange = GirlsLoader.get("cure_ange");
+        public static final CureEtoile etoile = GirlsLoader.get("cure_etoile");
+        public static final CureMacherie macherie = GirlsLoader.get("cure_macherie");
+        public static final CureAmour amour = GirlsLoader.get("cure_amour");
     }
 
     public static final class Shiny {
