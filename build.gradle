@@ -3,10 +3,6 @@ version '0.1'
 
 apply plugin: 'java'
 
-//暫定動作確認用
-apply plugin: 'application'
-mainClassName = 'cure4j.Cure4j'
-
 sourceCompatibility = 11
 targetCompatibility = 11
 
@@ -19,13 +15,16 @@ tasks.withType(JavaCompile) {
 }
 dependencies {
     compile 'org.yaml:snakeyaml:1.21'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
+    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.2'
 }
-jar{
-    manifest{
-        attributes 'Main-Class':'cure4j.Cure4j'
-    }
 
+test {
+    useJUnitPlatform ()
+}
+
+jar {
+    dependsOn(test)
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it)}
     }

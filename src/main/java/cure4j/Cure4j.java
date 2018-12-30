@@ -78,6 +78,8 @@ public final class Cure4j {
         public static final CureEtoile etoile = GirlsLoader.get("cure_etoile");
         public static final CureMacherie macherie = GirlsLoader.get("cure_macherie");
         public static final CureAmour amour = GirlsLoader.get("cure_amour");
+
+        public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 
     public static final class Shiny {

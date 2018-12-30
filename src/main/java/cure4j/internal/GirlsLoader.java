@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class GirlsLoader {
 
-    private static final Map<String, Class<? extends Girl>> GIRL_CLASSES = Map.ofEntries(
+    private static final Map<String, Class<? extends Girl<?>>> GIRL_CLASSES = Map.ofEntries(
             entry("cure_black", CureBlack.class),
             entry("cure_white", CureWhite.class),
             entry("shiny_luminous", ShinyLuminous.class),
@@ -85,9 +85,12 @@ public class GirlsLoader {
             entry("cure_ange", CureAnge.class),
             entry("cure_etoile", CureEtoile.class),
             entry("cure_macherie", CureMacherie.class),
-            entry("cure_amour", CureAmour.class)
+            entry("cure_amour", CureAmour.class),
+
+            entry("cure_echo", CureEcho.class)
     );
-    private static Map.Entry<String, Class<? extends Girl>> entry(String girlName, Class<? extends Girl> girlClass){
+    private static Map.Entry<String, Class<? extends Girl<?>>>
+            entry(String girlName, Class<? extends Girl<?>> girlClass){
         return new AbstractMap.SimpleImmutableEntry<>(girlName, girlClass);
     }
 
@@ -110,18 +113,17 @@ public class GirlsLoader {
             "/girls/movie.yml"
     );
 
-    private static final Map<String, Girl> GIRL_INSTANCE = load();
+    private static final Map<String, Girl<?>> GIRL_INSTANCE = load();
 
-    public static synchronized <T extends Girl> T get(String girlName){
+    public static synchronized <T extends Girl<?>> T get(String girlName){
         if(!GIRL_INSTANCE.containsKey(girlName)){
-            return null;
-//            throw new RuntimeException(girlName);//TODO NoSuchGirlExceptionとか
+            throw new UnknownGirlException("Unknown girl name : " + girlName);
         }
         return (T)GIRL_INSTANCE.get(girlName);
     }
 
-    private static Map<String, Girl> load(){
-        Map<String, Girl> result = new HashMap<>();
+    private static Map<String, Girl<?>> load(){
+        Map<String, Girl<?>> result = new HashMap<>();
         Yaml yaml = new Yaml(new LocalDateConstructor());
         try{
             for(String path : FILES){
@@ -140,7 +142,7 @@ public class GirlsLoader {
                             .filter(es -> !GIRL_CLASSES.containsKey(es.getKey()))
                             .collect(Collectors.toMap(
                                     es -> es.getKey(),
-                                    es -> result.getOrDefault(es.getValue().get("girl_name"), result.get("cure_black"))
+                                    es -> result.get((String) es.getValue().get("girl_name"))
                             ))
                     );
                 }
@@ -150,7 +152,7 @@ public class GirlsLoader {
         }
         return result;
     }
-    private static <T extends Girl> Girl create(Class<T> girlClass, Map<String, Object> config){
+    private static Girl<? extends Girl<?>> create(Class<? extends Girl<?>> girlClass, Map<String, Object> config){
         try {
             return girlClass.getConstructor(Map.class).newInstance(config);
         }catch(Exception e){
