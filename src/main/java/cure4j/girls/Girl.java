@@ -2,7 +2,6 @@ package cure4j.girls;
 
 import cure4j.internal.GirlsLoader;
 import cure4j.util.LinkleStone;
-import cure4j.util.LinkleStoneMiracleMagical;
 import cure4j.util.PrecureColor;
 import cure4j.util.Listream;
 
@@ -61,24 +60,24 @@ public abstract class Girl <G extends Girl<G>>{
         return birthday.orElse("No official data.");
     }
 
-    public Listream<String> extraNames(){
+    public Listream<String> getExtraNames(){
         return extraNames;
     }
 
-    public Listream<String> transformCalls(){
+    public Listream<String> getTransformCalls(){
         return transformCalls;
     }
 
-    public abstract String transformMessage();
+    public abstract String getTransformMessage();
 
-    public abstract Listream<String> attackMessages();
+    public abstract Listream<String> getAttackMessages();
 
     public String name(){
         return allNames.get(current);
     }
 
     public boolean hasBirthday(){
-        return birthday != null;
+        return birthday.isPresent();
     }
 
     public G humanize(){
@@ -90,7 +89,7 @@ public abstract class Girl <G extends Girl<G>>{
         if(current == 0){
             throw new RequireTransformException("Require transform.");
         }
-        printByLine(attackMessages().get(Math.min(current, attackMessages().size()) - 1));
+        printByLine(getAttackMessages().get(Math.min(current, getAttackMessages().size()) - 1));
     }
 
     @Override
@@ -105,7 +104,7 @@ public abstract class Girl <G extends Girl<G>>{
 
     private static void sleepAndPrint(String message){
         try {
-            Thread.sleep((long)sleepSec * 1000);
+            Thread.sleep((long)(sleepSec * 1000.0));
         } catch (InterruptedException e) {
             //ignore
         }
@@ -156,12 +155,12 @@ public abstract class Girl <G extends Girl<G>>{
         }
 
         @Override
-        public String transformMessage() {
+        public String getTransformMessage() {
             return transformMessage;
         }
 
         @Override
-        public Listream<String> attackMessages() {
+        public Listream<String> getAttackMessages() {
             return attackMessages;
         }
 
@@ -260,12 +259,12 @@ public abstract class Girl <G extends Girl<G>>{
         }
 
         @Override
-        public Listream<String> attackMessages() {
+        public Listream<String> getAttackMessages() {
             return attackMessages;
         }
 
         @Override
-        public String transformMessage() {
+        public String getTransformMessage() {
             return transformMessages.get(current);
         }
 
