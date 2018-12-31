@@ -44,12 +44,16 @@ public abstract class Girl <G extends Girl<G>>{
 
     public abstract LocalDate createdDate();
 
-    public String humanName() {
+    public String fullName() {
+        return humanFullName.orElse(humanName);
+    }
+
+    public String getHumanName() {
         return humanName;
     }
 
-    public String humanFullName() {
-        return humanFullName.orElse(humanName);
+    public String getHumanFullName() {
+        return humanFullName.orElse("Undefined.");
     }
 
     public String castName() {
