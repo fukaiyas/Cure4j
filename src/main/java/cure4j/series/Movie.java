@@ -22,6 +22,7 @@ public class Movie {
     public static final Movie stmm = MoviesLoader.get("stmm");
     public static final Movie dreamStars = MoviesLoader.get("dream_stars");
     public static final Movie superStars = MoviesLoader.get("super_stars");
+    public static final Movie memories = MoviesLoader.get("memories");
     public static Movie getMovie(String movieName){
         return MoviesLoader.get(movieName);
     }
