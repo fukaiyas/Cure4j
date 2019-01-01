@@ -1,7 +1,7 @@
 package cure4j.series;
 
-import cure4j.Cure4j;
 import cure4j.girls.Girl;
+import cure4j.internal.DateUtil;
 import cure4j.internal.GirlsLoader;
 import cure4j.util.Listream;
 
@@ -16,7 +16,7 @@ public class Series {
     public final String title;
     public final LocalDate startedDate;
     public final LocalDate endedDate;
-    public final Listream<? extends Girl> girls;
+    public final Listream<Girl> girls;
 
     public Series(Map<String, Object> config){
         this.seriesName = (String)config.get("series_name");
@@ -24,16 +24,16 @@ public class Series {
         this.startedDate = (LocalDate)config.get("started_date");
         this.endedDate = (LocalDate)config.get("ended_date");
         List<String> girlNames = (List<String>)config.get("girls");
-        this.girls= new Listream<>(girlNames.stream()
+        this.girls = new Listream<>(girlNames.stream()
                 .map(name -> (Girl)GirlsLoader.get(name))
                 .collect(Collectors.toList()));
     }
 
     public boolean isOnAir(){
-        return isOnAir(Cure4j.currentDate());
+        return isOnAir(DateUtil.currentDate());
     }
     public boolean isOnAir(String date){
-        return isOnAir(LocalDate.parse(date));
+        return isOnAir(DateUtil.parseDate(date));
     }
     public boolean isOnAir(LocalDate date){
         if(startedDate == null){

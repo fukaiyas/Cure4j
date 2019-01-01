@@ -1,8 +1,7 @@
 package cure4j.series;
 
-import cure4j.Cure4j;
 import cure4j.girls.Girl;
-import cure4j.internal.MoviesLoader;
+import cure4j.internal.DateUtil;
 import cure4j.internal.SeriesLoader;
 import cure4j.util.Listream;
 
@@ -43,10 +42,10 @@ public class PrecureSeries extends Series {
                     .collect(Collectors.toList()));
 
     public Listream<Girl> allStars(){
-        return allStars(Cure4j.currentDate());
+        return allStars(DateUtil.currentDate());
     }
     public Listream<Girl> allStars(String date){
-        return allStars(LocalDate.parse(date));
+        return allStars(DateUtil.parseDate(date));
     }
     public Listream<Girl> allStars(Movie movie){
         return allStars(movie.startedDate);
@@ -59,9 +58,14 @@ public class PrecureSeries extends Series {
         return current();
     }
     public Series current(){
-        return series.filter(Series::isOnAir)
+        return when(DateUtil.currentDate());
+    }
+    public Series when(String date){
+        return when(DateUtil.parseDate(date));
+    }
+    public Series when(LocalDate date){
+        return series.filter(s -> s.isOnAir(date))
                 .findFirst()
                 .orElseThrow(() -> new NotOnAirException("Not on air precure!"));
     }
-
 }
