@@ -1,5 +1,6 @@
 package cure4j.series;
 
+import cure4j.Cure4j;
 import cure4j.girls.Girl;
 import cure4j.internal.GirlsLoader;
 import cure4j.util.Listream;
@@ -29,7 +30,7 @@ public class Series {
     }
 
     public boolean isOnAir(){
-        return isOnAir(LocalDate.now());
+        return isOnAir(Cure4j.currentDate());
     }
     public boolean isOnAir(String date){
         return isOnAir(LocalDate.parse(date));

@@ -5,6 +5,8 @@ import cure4j.series.PrecureSeries;
 import cure4j.internal.GirlsLoader;
 import cure4j.internal.SeriesLoader;
 
+import java.time.*;
+
 public final class Cure4j {
 
     public static final PrecureSeries Precure = new PrecureSeries(SeriesLoader.unmarked);
@@ -90,5 +92,21 @@ public final class Cure4j {
     public static final class Milky {
         private Milky(){}
         public static final MilkyRose rose = GirlsLoader.get("milky_rose");
+    }
+
+    private static final ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();
+
+    private static Clock currentClock = Clock.systemDefaultZone();
+
+    public static LocalDate currentDate(){
+        return LocalDate.now(currentClock);
+    }
+    public static void setCurrentDate(CharSequence date){
+        LocalDate localDate = LocalDate.parse(date);
+        currentClock = Clock.fixed(
+                localDate.atStartOfDay(DEFAULT_ZONE_ID).toInstant(), DEFAULT_ZONE_ID);
+    }
+    public static void setDefaultCurrentDate(){
+        currentClock = Clock.systemDefaultZone();
     }
 }

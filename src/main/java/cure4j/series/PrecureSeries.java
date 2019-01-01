@@ -1,5 +1,6 @@
 package cure4j.series;
 
+import cure4j.Cure4j;
 import cure4j.girls.Girl;
 import cure4j.internal.MoviesLoader;
 import cure4j.internal.SeriesLoader;
@@ -31,7 +32,7 @@ public class PrecureSeries extends Series {
     public final Series aLaMode = SeriesLoader.get("a_la_mode");
     public final Series hugtto = SeriesLoader.get("hugtto");
 
-    public Series getSeries(String seriesName){
+    public Series find(String seriesName){
         return SeriesLoader.get(seriesName);
     }
 
@@ -42,7 +43,7 @@ public class PrecureSeries extends Series {
                     .collect(Collectors.toList()));
 
     public Listream<Girl> allStars(){
-        return allStars(LocalDate.now());
+        return allStars(Cure4j.currentDate());
     }
     public Listream<Girl> allStars(String date){
         return allStars(LocalDate.parse(date));
