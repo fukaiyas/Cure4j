@@ -48,11 +48,11 @@ public abstract class Girl <G extends Girl<G>>{
         return humanFullName.orElse(humanName);
     }
 
-    public String getHumanName() {
+    public String humanName() {
         return humanName;
     }
 
-    public String getHumanFullName() {
+    public String humanFullName() {
         return humanFullName.orElse("Undefined.");
     }
 
