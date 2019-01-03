@@ -23,21 +23,28 @@ public class Movie {
     public static final Movie dreamStars = MoviesLoader.get("dream_stars");
     public static final Movie superStars = MoviesLoader.get("super_stars");
     public static final Movie memories = MoviesLoader.get("memories");
+
+    public static final Listream<Movie> movies = new Listream<>(
+            MoviesLoader.allEntries().stream()
+                .distinct()
+                .sorted((m1, m2) -> m1.startedDate.compareTo(m2.startedDate))
+                .collect(Collectors.toList()));
+
+    public final String  title;
+    public final LocalDate startedDate;
+    public final Listream<Girl<?>> extraGirls;
+
     public static Movie getMovie(String movieName){
         return MoviesLoader.get(movieName);
     }
 
-    public final String  title;
-    public final LocalDate startedDate;
-    public final Listream<Girl> extraGirls;
-
     public Movie(Map<String, Object> config){
         this.title = (String)config.get("title");
         this.startedDate = (LocalDate)config.get("started_date");
-        List<String> girlNames = (List<String>)config.get("girls");
+        List<String> girlNames = (List<String>)config.get("extra_girls");
         this.extraGirls = girlNames == null ? new Listream<>() :
                 new Listream<>(girlNames.stream()
-                    .map(name -> (Girl)GirlsLoader.get(name))
+                    .map(name -> (Girl<?>)GirlsLoader.get(name))
                     .collect(Collectors.toList()));
     }
 

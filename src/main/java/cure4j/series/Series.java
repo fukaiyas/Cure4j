@@ -16,7 +16,7 @@ public class Series {
     public final String title;
     public final LocalDate startedDate;
     public final LocalDate endedDate;
-    public final Listream<Girl> girls;
+    public final Listream<Girl<?>> girls;
 
     public Series(Map<String, Object> config){
         this.seriesName = (String)config.get("series_name");
@@ -25,7 +25,7 @@ public class Series {
         this.endedDate = (LocalDate)config.get("ended_date");
         List<String> girlNames = (List<String>)config.get("girls");
         this.girls = new Listream<>(girlNames.stream()
-                .map(name -> (Girl)GirlsLoader.get(name))
+                .map(name -> (Girl<?>)GirlsLoader.get(name))
                 .collect(Collectors.toList()));
     }
 

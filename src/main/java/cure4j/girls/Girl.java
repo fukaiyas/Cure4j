@@ -32,7 +32,11 @@ public abstract class Girl <G extends Girl<G>>{
         this.transformCalls = new Listream<String>((List<String>)config.get("transform_calls"));
     }
 
-    public static <T extends Girl> T byName(String girlName){
+    public static Listream<Girl<?>> allGirls(){
+        return GirlsLoader.getAllGirls();
+    }
+
+    public static <T extends Girl<?>> T byName(String girlName){
         return(T) GirlsLoader.get(girlName);
     }
 

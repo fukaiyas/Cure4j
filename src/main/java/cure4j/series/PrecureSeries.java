@@ -6,6 +6,7 @@ import cure4j.internal.SeriesLoader;
 import cure4j.util.Listream;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -41,17 +42,27 @@ public class PrecureSeries extends Series {
                     .sorted((s1, s2) -> s1.startedDate.compareTo(s2.startedDate))
                     .collect(Collectors.toList()));
 
-    public Listream<Girl> allStars(){
+    public Listream<Girl<?>> allStars(){
         return allStars(DateUtil.currentDate());
     }
-    public Listream<Girl> allStars(String date){
+    public Listream<Girl<?>> allStars(String date){
         return allStars(DateUtil.parseDate(date));
     }
-    public Listream<Girl> allStars(Movie movie){
-        return allStars(movie.startedDate);
+    public Listream<Girl<?>> allStars(Movie movie){
+        //FIXME 本来はオールスターズ系(3世代系じゃない)だけ指定可能にしたいかも？
+        return new Listream<>(allStars(movie.startedDate), movie.extraGirls);
     }
-    public Listream<Girl> allStars(LocalDate date){
-        return null;//FIXME
+    public Listream<Girl<?>> allStars(LocalDate date){
+        //FIXME (本来はmemories決め打ちではなく、オールスターズとしての最新の作品の日付にするべき？)
+        LocalDate lastDate = date.isBefore(Movie.memories.startedDate) ?
+                date : Movie.memories.startedDate;
+        List<Girl<?>> extraGirls = Movie.movies
+                .flatMap(m -> m.extraGirls.stream())
+                .distinct()
+                .collect(Collectors.toList());
+        return Girl.allGirls()
+                .filter(g -> g.createdDate().isBefore(lastDate))
+                .filter(g -> !extraGirls.contains(g));
     }
 
     public Series now(){

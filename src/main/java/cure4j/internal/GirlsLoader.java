@@ -1,6 +1,7 @@
 package cure4j.internal;
 
 import cure4j.girls.*;
+import cure4j.util.Listream;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
@@ -115,7 +116,14 @@ public class GirlsLoader {
 
     private static final Map<String, Girl<?>> GIRL_INSTANCE = load();
 
-    public static synchronized <T extends Girl<?>> T get(String girlName){
+    public static Listream<Girl<?>> getAllGirls(){
+        return new Listream<Girl<?>>(
+                GIRL_INSTANCE.values().stream()
+                        .distinct()
+                        .sorted((g1, g2) -> g1.createdDate().compareTo(g2.createdDate()))
+                        .collect(Collectors.toList()));
+    }
+    public static <T extends Girl<?>> T get(String girlName){
         if(!GIRL_INSTANCE.containsKey(girlName)){
             throw new UnknownGirlException("Unknown girl name : " + girlName);
         }
