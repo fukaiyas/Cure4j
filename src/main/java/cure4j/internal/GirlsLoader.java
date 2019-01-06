@@ -2,13 +2,7 @@ package cure4j.internal;
 
 import cure4j.girls.*;
 import cure4j.util.Listream;
-import org.yaml.snakeyaml.Yaml;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UncheckedIOException;
-import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
 
