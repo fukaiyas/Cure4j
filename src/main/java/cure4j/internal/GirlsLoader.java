@@ -9,10 +9,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UncheckedIOException;
 import java.nio.charset.Charset;
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GirlsLoader {
@@ -120,7 +117,7 @@ public class GirlsLoader {
         return new Listream<Girl<?>>(
                 GIRL_INSTANCE.values().stream()
                         .distinct()
-                        .sorted((g1, g2) -> g1.createdDate().compareTo(g2.createdDate()))
+                        .sorted(Comparator.comparing(Girl::createdDate))
                         .collect(Collectors.toList()));
     }
     public static <T extends Girl<?>> T get(String girlName){
@@ -132,35 +129,29 @@ public class GirlsLoader {
 
     private static Map<String, Girl<?>> load(){
         Map<String, Girl<?>> result = new HashMap<>();
-        Yaml yaml = new Yaml(new LocalDateConstructor());
-        try{
-            for(String path : FILES){
-                try(Reader reader = new InputStreamReader(
-                        GirlsLoader.class.getResourceAsStream(path), Charset.forName("UTF-8"))){
-                    Map<String, Map<String, Object>> girls =
-                            (Map<String, Map<String, Object>>) yaml.load(reader);
-                    result.putAll(girls.entrySet().stream()
+        for(String path : FILES) {
+            result.putAll(LoaderUtil.loadYaml(
+                    path,
+                    root -> root.entrySet().stream()
                             .filter(es -> GIRL_CLASSES.containsKey(es.getKey()))
                             .collect(Collectors.toMap(
                                     es -> es.getKey(),
                                     es -> create(GIRL_CLASSES.get(es.getKey()), es.getValue())
-                            ))
-                    );
-                    result.putAll(girls.entrySet().stream()
+                            )))
+            );
+            result.putAll(LoaderUtil.loadYaml(
+                    path,
+                    root -> root.entrySet().stream()
                             .filter(es -> !GIRL_CLASSES.containsKey(es.getKey()))
                             .collect(Collectors.toMap(
                                     es -> es.getKey(),
-                                    es -> result.get((String) es.getValue().get("girl_name"))
-                            ))
-                    );
-                }
-            }
-        }catch(IOException ioEx){
-            throw new UncheckedIOException(ioEx);
+                                    es -> result.get((String) ((Map<String, Object>)es.getValue()).get("girl_name"))
+                            )))
+            );
         }
         return result;
     }
-    private static Girl<? extends Girl<?>> create(Class<? extends Girl<?>> girlClass, Map<String, Object> config){
+    private static Girl<? extends Girl<?>> create(Class<? extends Girl<?>> girlClass, Object config){
         try {
             return girlClass.getConstructor(Map.class).newInstance(config);
         }catch(Exception e){
