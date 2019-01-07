@@ -25,4 +25,12 @@ public class DateUtilTest {
         assertThrows(DateTimeParseException.class, () -> DateUtil.parseDate("Bad Format"));
         assertThrows(NullPointerException.class, () -> DateUtil.parseDate(null));
     }
+
+    @Test
+    void 現在時刻の設定(){
+        DateUtil.setCurrentDate("2002/12/1");
+        assertEquals(LocalDate.of(2002, 12, 1), DateUtil.currentDate());
+        DateUtil.setDefaultCurrentDate();
+        assertNotEquals(LocalDate.of(2002, 12, 1), DateUtil.currentDate());
+    }
 }
