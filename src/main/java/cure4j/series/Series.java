@@ -36,6 +36,9 @@ public class Series {
         return isOnAir(DateUtil.parseDate(date));
     }
     public boolean isOnAir(LocalDate date){
+        if(DateUtil.currentDate().isBefore(date)){
+            throw new IllegalArgumentException("Can't determine because it is future date.");
+        }
         if(startedDate == null){
             return false;
         }
