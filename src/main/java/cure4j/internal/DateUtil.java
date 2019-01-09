@@ -20,9 +20,12 @@ public class DateUtil {
     }
 
     public static void setCurrentDate(CharSequence date){
-        LocalDate localDate = parseDate(date);
+        setCurrentDate(parseDate(date));
+    }
+
+    public static void setCurrentDate(LocalDate date){
         currentClock = Clock.fixed(
-                localDate.atStartOfDay(DEFAULT_ZONE_ID).toInstant(), DEFAULT_ZONE_ID);
+                date.atStartOfDay(DEFAULT_ZONE_ID).toInstant(), DEFAULT_ZONE_ID);
     }
 
     public static void setDefaultCurrentDate(){
