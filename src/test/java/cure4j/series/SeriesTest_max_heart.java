@@ -10,9 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SeriesTest_max_heart {
 
+    Series maxHeart = Precure.maxHeart;
+
     @Test
     void 各種プロパティ(){
-        var maxHeart = Precure.maxHeart;
         assertEquals("max_heart", maxHeart.seriesName);
         assertEquals("ふたりはプリキュア Max Heart", maxHeart.title);
         assertEquals(LocalDate.of(2005, 2, 6), maxHeart.startedDate);
@@ -25,12 +26,11 @@ public class SeriesTest_max_heart {
 
     @Test
     void エイリアス(){
-        assertEquals(Precure.maxHeart, Precure.find("futari_wa_pretty_cure_max_heart"));
+        assertEquals(maxHeart, Precure.find("futari_wa_pretty_cure_max_heart"));
     }
 
     @Test
     void onAir(){
-        var maxHeart = Precure.maxHeart;
         assertFalse(maxHeart.isOnAir(LocalDate.of(2005, 2, 5)));
         assertTrue(maxHeart.isOnAir(LocalDate.of(2005, 2, 6)));
         assertTrue(maxHeart.isOnAir(LocalDate.of(2006, 1, 29)));

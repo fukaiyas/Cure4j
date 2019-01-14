@@ -11,9 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SeriesTest_heart_catch {
 
+    Series heartCatch = Precure.heartCatch;
+
     @Test
     void 各種プロパティ(){
-        var heartCatch = Precure.heartCatch;
         assertEquals("heart_catch", heartCatch.seriesName);
         assertEquals("ハートキャッチプリキュア！", heartCatch.title);
         assertEquals(LocalDate.of(2010, 2, 7), heartCatch.startedDate);
@@ -27,12 +28,11 @@ public class SeriesTest_heart_catch {
 
     @Test
     void エイリアス(){
-        assertEquals(Precure.heartCatch, Precure.find("heart_catch_precure"));
+        assertEquals(heartCatch, Precure.find("heart_catch_precure"));
     }
 
     @Test
     void onAir(){
-        var heartCatch = Precure.heartCatch;
         assertFalse(heartCatch.isOnAir(LocalDate.of(2010, 2, 6)));
         assertTrue(heartCatch.isOnAir(LocalDate.of(2010, 2, 7)));
         assertTrue(heartCatch.isOnAir(LocalDate.of(2011, 1, 30)));

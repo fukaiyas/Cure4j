@@ -5,14 +5,16 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static cure4j.Cure4j.*;
+import static cure4j.Cure4j.Cure;
+import static cure4j.Cure4j.Precure;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SeriesTest_fresh {
 
+    Series fresh = Precure.fresh;
+
     @Test
     void 各種プロパティ(){
-        var fresh = Precure.fresh;
         assertEquals("fresh", fresh.seriesName);
         assertEquals("フレッシュプリキュア！", fresh.title);
         assertEquals(LocalDate.of(2009, 2, 1), fresh.startedDate);
@@ -26,12 +28,11 @@ public class SeriesTest_fresh {
 
     @Test
     void エイリアス(){
-        assertEquals(Precure.fresh, Precure.find("fresh_precure"));
+        assertEquals(fresh, Precure.find("fresh_precure"));
     }
 
     @Test
     void onAir(){
-        var fresh = Precure.fresh;
         assertFalse(fresh.isOnAir(LocalDate.of(2009, 1, 31)));
         assertTrue(fresh.isOnAir(LocalDate.of(2009, 2, 1)));
         assertTrue(fresh.isOnAir(LocalDate.of(2010, 1, 31)));

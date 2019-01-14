@@ -5,16 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static cure4j.Cure4j.Cure;
-import static cure4j.Cure4j.Milky;
-import static cure4j.Cure4j.Precure;
+import static cure4j.Cure4j.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SeriesTest_yes_gogo {
 
+    Series yesGogo = Precure.yesGogo;
+
     @Test
     void 各種プロパティ(){
-        var yesGogo = Precure.yesGogo;
         assertEquals("yes_gogo", yesGogo.seriesName);
         assertEquals("Yes！ プリキュア5 Go Go！", yesGogo.title);
         assertEquals(LocalDate.of(2008, 2, 3), yesGogo.startedDate);
@@ -30,13 +29,12 @@ public class SeriesTest_yes_gogo {
 
     @Test
     void エイリアス(){
-        assertEquals(Precure.yesGogo, Precure.find("yes_precure_five_gogo"));
-        assertEquals(Precure.yesGogo, Precure.find("yes_precure5_gogo"));
+        assertEquals(yesGogo, Precure.find("yes_precure_five_gogo"));
+        assertEquals(yesGogo, Precure.find("yes_precure5_gogo"));
     }
 
     @Test
     void onAir(){
-        var yesGogo = Precure.yesGogo;
         assertFalse(yesGogo.isOnAir(LocalDate.of(2008, 2, 2)));
         assertTrue(yesGogo.isOnAir(LocalDate.of(2008, 2, 3)));
         assertTrue(yesGogo.isOnAir(LocalDate.of(2009, 1, 25)));

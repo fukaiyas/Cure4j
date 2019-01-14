@@ -11,9 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SeriesTest_yes {
 
+    Series yes = Precure.yes;
+
     @Test
     void 各種プロパティ(){
-        var yes = Precure.yes;
         assertEquals("yes", yes.seriesName);
         assertEquals("Yes！ プリキュア5", yes.title);
         assertEquals(LocalDate.of(2007, 2, 4), yes.startedDate);
@@ -28,13 +29,12 @@ public class SeriesTest_yes {
 
     @Test
     void エイリアス(){
-        assertEquals(Precure.yes, Precure.find("yes_precure_five"));
-        assertEquals(Precure.yes, Precure.find("yes_precure5"));
+        assertEquals(yes, Precure.find("yes_precure_five"));
+        assertEquals(yes, Precure.find("yes_precure5"));
     }
 
     @Test
     void onAir(){
-        var yes = Precure.yes;
         assertFalse(yes.isOnAir(LocalDate.of(2007, 2, 3)));
         assertTrue(yes.isOnAir(LocalDate.of(2007, 2, 4)));
         assertTrue(yes.isOnAir(LocalDate.of(2008, 1, 27)));
