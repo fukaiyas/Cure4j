@@ -49,6 +49,7 @@ public class SeriesTest_unmarked {
     void 未来日付は例外(){
         DateUtil.setCurrentDate("2019/1/8");
         assertThrows(IllegalArgumentException.class, () -> unmarked.isOnAir("2100/1/1"));
+        assertThrows(IllegalArgumentException.class, () -> unmarked.isOnAir("2019/1/9"));
         DateUtil.setDefaultCurrentDate();
     }
 }
