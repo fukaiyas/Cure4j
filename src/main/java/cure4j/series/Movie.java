@@ -34,7 +34,7 @@ public class Movie {
     public final LocalDate startedDate;
     public final Listream<Girl<?>> extraGirls;
 
-    public static Movie getMovie(String movieName){
+    public static Movie find(String movieName){
         return MoviesLoader.get(movieName);
     }
 
