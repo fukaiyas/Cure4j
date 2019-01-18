@@ -27,7 +27,7 @@ public class DateUtilTest {
     }
 
     @Test
-    void 現在時刻の設定(){
+    void 現在日付の設定(){
         DateUtil.setCurrentDate("2002/12/1");
         assertEquals(LocalDate.of(2002, 12, 1), DateUtil.currentDate());
         DateUtil.setDefaultCurrentDate();
