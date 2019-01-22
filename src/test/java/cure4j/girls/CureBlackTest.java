@@ -19,6 +19,7 @@ public class CureBlackTest extends GirlTestBase {
     void 基本情報(){
         assertEquals("cure_black", black.girlName());
         assertEquals("美墨なぎさ", black.humanName());
+        assertEquals("美墨なぎさ", black.fullName());
         assertEquals("Undefined.", black.humanFullName());
         assertEquals("キュアブラック", black.precureName());
         assertEquals("本名陽子", black.castName());

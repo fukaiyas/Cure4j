@@ -18,6 +18,7 @@ public class CureWhiteTest extends GirlTestBase {
     void 基本情報(){
         assertEquals("cure_white", white.girlName());
         assertEquals("雪城ほのか", white.humanName());
+        assertEquals("雪城ほのか", white.fullName());
         assertEquals("Undefined.", white.humanFullName());
         assertEquals("キュアホワイト", white.precureName());
         assertEquals("ゆかな", white.castName());
