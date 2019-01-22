@@ -11,6 +11,7 @@ import java.util.*;
 public abstract class Girl <G extends Girl<G>>{
 
     public static double sleepSec = 1;
+    public static MessagePrinter messagePrinter = new MessagePrinter();
 
     protected final String humanName;
     protected final Optional<String> humanFullName;
@@ -107,16 +108,7 @@ public abstract class Girl <G extends Girl<G>>{
 
     protected void printByLine(String message){
         Arrays.stream(message.split("\\n"))
-                .forEachOrdered(Girl::sleepAndPrint);
-    }
-
-    private static void sleepAndPrint(String message){
-        try {
-            Thread.sleep((long)(sleepSec * 1000.0));
-        } catch (InterruptedException e) {
-            //ignore
-        }
-        System.out.println(message);
+                .forEachOrdered(ms -> messagePrinter.sleepAndPrintln(sleepSec, ms));
     }
 
     public static class StandardGirl<G extends StandardGirl<G>> extends Girl<StandardGirl<G>>{
@@ -293,6 +285,17 @@ public abstract class Girl <G extends Girl<G>>{
             }
             MahoGirl otherGirl = (MahoGirl)other;
             return girlNames.equals(otherGirl.girlNames);
+        }
+    }
+
+    public static class MessagePrinter {
+        public void sleepAndPrintln(double sec, String message){
+            try {
+                Thread.sleep((long)(sec * 1000.0));
+            } catch (InterruptedException e) {
+                //ignore
+            }
+            System.out.println(message);
         }
     }
 }

@@ -6,10 +6,12 @@ import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CureBlackTest {
+public class CureBlackTest extends GirlTestBase {
 
     CureBlack black = Cure.black;
 
@@ -24,10 +26,21 @@ public class CureBlackTest {
         assertEquals(PrecureColor.BLACK, black.color());
         assertTrue(black.hasBirthday());
         assertEquals("10/10", black.birthday());
-        assertEquals("デュアル・オーロラ・ウェイブ！！\n光の使者、キュアブラック！\nふたりはプリキュア！\n闇の力のしもべ達よ！\nとっととお家に帰りなさい！", black.getTransformMessage());
+        assertEquals("デュアル・オーロラ・ウェイブ！！\n" +
+                "光の使者、キュアブラック！\n" +
+                "ふたりはプリキュア！\n" +
+                "闇の力のしもべ達よ！\n" +
+                "とっととお家に帰りなさい！",
+                black.getTransformMessage());
         assertEquals(0, black.getExtraNames().size());
         assertEquals(1, black.getAttackMessages().size());
-        assertEquals("ブラックサンダー！\nホワイトサンダー！\nプリキュアの美しき魂が！\n邪悪な心を打ち砕く！\nプリキュア・マーブル・スクリュー！！\nマックス！！", black.getAttackMessages().get(0));
+        assertEquals("ブラックサンダー！\n" +
+                "ホワイトサンダー！\n" +
+                "プリキュアの美しき魂が！\n" +
+                "邪悪な心を打ち砕く！\n" +
+                "プリキュア・マーブル・スクリュー！！\n" +
+                "マックス！！",
+                black.getAttackMessages().get(0));
         assertEquals(1, black.getTransformCalls().size());
         assertEquals("dual_aurora_wave", black.getTransformCalls().get(0));
     }
@@ -39,29 +52,53 @@ public class CureBlackTest {
 
     @Test
     void 変身(){
-        Girl.sleepSec = 0;
         black.humanize();
 
         assertEquals("美墨なぎさ", black.name());
-        //TODO System.outもテストしたい？
         black.transform();
+        assertEquals(List.of("デュアル・オーロラ・ウェイブ！！",
+                "光の使者、キュアブラック！",
+                "ふたりはプリキュア！",
+                "闇の力のしもべ達よ！",
+                "とっととお家に帰りなさい！"),
+                messageTester.messages);
         assertEquals("キュアブラック", black.name());
+
+        messageTester.messages.clear();
         black.transform();
+        assertEquals(Collections.emptyList(), messageTester.messages);
         assertEquals("美墨なぎさ", black.name());
+
+        messageTester.messages.clear();
         black.dualAuroraWave();
+        assertEquals(List.of("デュアル・オーロラ・ウェイブ！！",
+                "光の使者、キュアブラック！",
+                "ふたりはプリキュア！",
+                "闇の力のしもべ達よ！",
+                "とっととお家に帰りなさい！"),
+                messageTester.messages);
         assertEquals("キュアブラック", black.name());
+
+        messageTester.messages.clear();
         black.humanize();
+        assertEquals(Collections.emptyList(), messageTester.messages);
         assertEquals("美墨なぎさ", black.name());
     }
 
     @Test
     void 攻撃(){
-        Girl.sleepSec = 0;
         black.humanize();
-
         assertThrows(RequireTransformException.class, () -> black.attack(), "Require transform.");
+
         black.transform();
+        messageTester.messages.clear();
         black.attack();
-        //TODO System.outもテストしたい？
+        assertEquals(List.of("ブラックサンダー！",
+                "ホワイトサンダー！",
+                "プリキュアの美しき魂が！",
+                "邪悪な心を打ち砕く！",
+                "プリキュア・マーブル・スクリュー！！",
+                "マックス！！"),
+                messageTester.messages);
     }
 }
