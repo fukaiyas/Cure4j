@@ -41,6 +41,11 @@ public class ShinyLuminousTest extends GirlTestBase{
     }
 
     @Test
+    void エイリアス(){
+        assertEquals(luminous, Girl.byName("luminous"));
+    }
+
+    @Test
     void 変身(){
         luminous.humanize();
 

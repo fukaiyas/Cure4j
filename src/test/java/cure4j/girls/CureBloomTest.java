@@ -47,6 +47,11 @@ public class CureBloomTest extends GirlTestBase {
     }
 
     @Test
+    void エイリアス(){
+        assertEquals(bloom, Girl.byName("bloom"));
+    }
+
+    @Test
     void 変身(){
         bloom.humanize();
 
