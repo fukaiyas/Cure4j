@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 
 import static cure4j.Cure4j.Cure;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CureBloomTest extends GirlTestBase {
@@ -17,7 +16,7 @@ public class CureBloomTest extends GirlTestBase {
 
     @Test
     void 基本情報(){
-        assertEquals("cure_bloom", bloom.girlName);
+        assertEquals("cure_bloom", bloom.girlName());
         assertEquals("日向咲", bloom.humanName());
         assertEquals("日向咲", bloom.fullName());
         assertEquals("Undefined.", bloom.humanFullName());
@@ -42,8 +41,7 @@ public class CureBloomTest extends GirlTestBase {
                         "奇跡の力を解き放て！\n" +
                         "プリキュア　ツインストリーム・スプラッシュ！！",
                 bloom.getAttackMessages().get(0));
-        assertEquals(1, bloom.getTransformCalls().size());
-        assertEquals("dual_spiritual_power", bloom.getTransformCalls().get(0));
+        assertEquals(List.of("dual_spiritual_power"), bloom.getTransformCalls());
     }
 
     @Test

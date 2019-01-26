@@ -16,7 +16,7 @@ public class CureBrightTest extends GirlTestBase {
 
     @Test
     void 基本情報(){
-        assertEquals("cure_bloom", bright.girlName);
+        assertEquals("cure_bloom", bright.girlName());
         assertEquals("日向咲", bright.humanName());
         assertEquals("日向咲", bright.fullName());
         assertEquals("Undefined.", bright.humanFullName());
@@ -39,8 +39,7 @@ public class CureBrightTest extends GirlTestBase {
                         "希望へ導け、2つの心！\n" +
                         "プリキュア・スパイラルスタースプラッシュ！！",
                 bright.getAttackMessages().get(0));
-        assertEquals(1, bright.getTransformCalls().size());
-        assertEquals("dual_spiritual_power", bright.getTransformCalls().get(0));
+        assertEquals(List.of("dual_spiritual_power"), bright.getTransformCalls());
     }
 
     @Test

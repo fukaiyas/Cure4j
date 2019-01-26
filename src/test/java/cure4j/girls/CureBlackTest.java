@@ -1,7 +1,5 @@
 package cure4j.girls;
 
-import static cure4j.Cure4j.Cure;
-
 import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +7,7 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
+import static cure4j.Cure4j.Cure;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CureBlackTest extends GirlTestBase {
@@ -42,8 +41,7 @@ public class CureBlackTest extends GirlTestBase {
                 "プリキュア・マーブル・スクリュー！！\n" +
                 "マックス！！",
                 black.getAttackMessages().get(0));
-        assertEquals(1, black.getTransformCalls().size());
-        assertEquals("dual_aurora_wave", black.getTransformCalls().get(0));
+        assertEquals(List.of("dual_aurora_wave"), black.getTransformCalls());
     }
 
     @Test

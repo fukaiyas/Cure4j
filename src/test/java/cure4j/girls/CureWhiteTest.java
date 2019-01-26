@@ -41,8 +41,7 @@ public class CureWhiteTest extends GirlTestBase {
                         "プリキュア・マーブル・スクリュー！！\n" +
                         "マックス！！",
                 white.getAttackMessages().get(0));
-        assertEquals(1, white.getTransformCalls().size());
-        assertEquals("dual_aurora_wave", white.getTransformCalls().get(0));
+        assertEquals(List.of("dual_aurora_wave"), white.getTransformCalls());
     }
 
     @Test

@@ -5,7 +5,6 @@ import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class ShinyLuminousTest extends GirlTestBase{
 
     @Test
     void 基本情報(){
-        assertEquals("shiny_luminous", luminous.girlName);
+        assertEquals("shiny_luminous", luminous.girlName());
         assertEquals("九条ひかり", luminous.humanName());
         assertEquals("九条ひかり", luminous.fullName());
         assertEquals("Undefined.", luminous.humanFullName());
@@ -36,8 +35,7 @@ public class ShinyLuminousTest extends GirlTestBase{
         assertEquals("光の意志よ！私に勇気を！希望と力を！！\n" +
                 "ルミナス・ハーティエル・アンクション！",
                 luminous.getAttackMessages().get(0));
-        assertEquals(1, luminous.getTransformCalls().size());
-        assertEquals("shining_stream", luminous.getTransformCalls().get(0));
+        assertEquals(List.of("shining_stream"), luminous.getTransformCalls());
     }
 
     @Test
