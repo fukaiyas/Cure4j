@@ -36,14 +36,14 @@ public class SeriesTest_hugtto {
     void onAir(){
         assertFalse(hugtto.isOnAir(LocalDate.of(2018, 2, 3)));
         assertTrue(hugtto.isOnAir(LocalDate.of(2018, 2, 4)));
-//        assertTrue(hugtto.isOnAir(LocalDate.of(2019, 1, 27)));
-//        assertFalse(hugtto.isOnAir(LocalDate.of(2019, 1, 28)));
+        assertTrue(hugtto.isOnAir(LocalDate.of(2019, 1, 27)));
+        assertFalse(hugtto.isOnAir(LocalDate.of(2019, 1, 28)));
 
-//        DateUtil.setDefaultCurrentDate();
-//        assertFalse(hugtto.isOnAir());
+        DateUtil.setDefaultCurrentDate();
+        assertFalse(hugtto.isOnAir());
 
-//        DateUtil.setCurrentDate(LocalDate.of(2018, 8, 8));
+        DateUtil.setCurrentDate(LocalDate.of(2018, 8, 8));
         assertTrue(hugtto.isOnAir());
-//        DateUtil.setDefaultCurrentDate();
+        DateUtil.setDefaultCurrentDate();
     }
 }
