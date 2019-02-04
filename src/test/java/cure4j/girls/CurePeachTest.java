@@ -118,6 +118,15 @@ public class CurePeachTest extends GirlTestBase {
         assertThrows(RequireTransformException.class, () -> peach.attack(), "Require transform.");
 
         peach.transform();
+        assertEquals("キュアピーチ", peach.name());
+        messageTester.messages.clear();
+        peach.attack();
+        assertEquals(List.of("悪いの悪いの飛んでいけ！",
+                        "プリキュア！ラブサンシャインフレッシュ！"),
+                messageTester.messages);
+
+        peach.transform();
+        assertEquals("キュアエンジェルピーチ", peach.name());
         messageTester.messages.clear();
         peach.attack();
         assertEquals(List.of("悪いの悪いの飛んでいけ！",

@@ -118,6 +118,15 @@ public class CurePassionTest extends GirlTestBase {
         assertThrows(RequireTransformException.class, () -> passion.attack(), "Require transform.");
 
         passion.transform();
+        assertEquals("キュアパッション", passion.name());
+        messageTester.messages.clear();
+        passion.attack();
+        assertEquals(List.of("吹き荒れよ幸せの嵐！",
+                        "プリキュア！ハピネスハリケーン！"),
+                messageTester.messages);
+
+        passion.transform();
+        assertEquals("キュアエンジェルパッション", passion.name());
         messageTester.messages.clear();
         passion.attack();
         assertEquals(List.of("吹き荒れよ幸せの嵐！",

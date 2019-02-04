@@ -118,6 +118,15 @@ public class CureBerryTest extends GirlTestBase {
         assertThrows(RequireTransformException.class, () -> berry.attack(), "Require transform.");
 
         berry.transform();
+        assertEquals("キュアベリー", berry.name());
+        messageTester.messages.clear();
+        berry.attack();
+        assertEquals(List.of("悪いの悪いの飛んでいけ！",
+                        "プリキュア！エスポワールシャワーフレッシュ！"),
+                messageTester.messages);
+
+        berry.transform();
+        assertEquals("キュアエンジェルベリー", berry.name());
         messageTester.messages.clear();
         berry.attack();
         assertEquals(List.of("悪いの悪いの飛んでいけ！",

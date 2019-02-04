@@ -118,6 +118,15 @@ public class CurePineTest extends GirlTestBase {
         assertThrows(RequireTransformException.class, () -> pine.attack(), "Require transform.");
 
         pine.transform();
+        assertEquals("キュアパイン", pine.name());
+        messageTester.messages.clear();
+        pine.attack();
+        assertEquals(List.of("悪いの悪いの飛んでいけ！",
+                        "プリキュア！ヒーリングプレアーフレッシュ！"),
+                messageTester.messages);
+
+        pine.transform();
+        assertEquals("キュアエンジェルパイン", pine.name());
         messageTester.messages.clear();
         pine.attack();
         assertEquals(List.of("悪いの悪いの飛んでいけ！",
