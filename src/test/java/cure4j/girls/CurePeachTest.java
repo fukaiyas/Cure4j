@@ -98,11 +98,6 @@ public class CurePeachTest extends GirlTestBase {
         assertEquals("桃園ラブ", peach.name());
 
         messageTester.messages.clear();
-        peach.humanize();
-        assertEquals(Collections.emptyList(), messageTester.messages);
-        assertEquals("桃園ラブ", peach.name());
-
-        messageTester.messages.clear();
         peach.beatUp();
         assertEquals(List.of("チェインジ！プリキュア・ビートアップ！",
                         "ピンクのハートは愛あるしるし！",
