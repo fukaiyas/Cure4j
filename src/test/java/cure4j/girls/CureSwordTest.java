@@ -93,6 +93,5 @@ public class CureSwordTest extends GirlTestBase {
         sword.attack();
         assertEquals(List.of("ひらめけ！ホーリーソード！"),
                 messageTester.messages);
-
     }
 }

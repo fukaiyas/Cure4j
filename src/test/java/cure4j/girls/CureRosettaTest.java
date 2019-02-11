@@ -93,6 +93,5 @@ public class CureRosettaTest extends GirlTestBase {
         rosetta.attack();
         assertEquals(List.of("カッチカチの！ロゼッタウォール！"),
                 messageTester.messages);
-
     }
 }

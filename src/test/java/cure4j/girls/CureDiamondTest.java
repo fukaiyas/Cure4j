@@ -93,6 +93,5 @@ public class CureDiamondTest extends GirlTestBase {
         diamond.attack();
         assertEquals(List.of("きらめきなさい！トゥインクルダイヤモンド！"),
                 messageTester.messages);
-
     }
 }
