@@ -18,7 +18,6 @@ public class CureAceTest extends GirlTestBase {
 
     @Test
     void 基本情報(){
-        System.out.println(Charset.defaultCharset());
         assertEquals("cure_ace", ace.girlName());
         assertEquals("円亜久里", ace.humanName());
         assertEquals("円亜久里", ace.fullName());
