@@ -84,6 +84,7 @@ cure_honey: &cure_honey
     ハピネスチャージプリキュア！
   extra_names:
   - キュアハニー ポップコーンチア
+  - キュアハニー ココナッツサンバ
   attack_messages:
     - |-
       命の光を聖なる力へ！
