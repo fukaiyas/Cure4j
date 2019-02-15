@@ -41,17 +41,15 @@ public class CurePrincessTest extends GirlTestBase {
                 "ラブプリブレス！\n" +
                 "プリキュア！ブルーハッピーシュート！！\n" +
                 "勇気よ、天に帰れ！\n" +
-                TestUtil.waveDash2FullwidthTilde("(ゴクラ〜ク…)")),
+                "(ゴクラ〜ク…)"),
                 princess.getAttackMessages().get(0));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！シャーベットバレエ！！\n" +
-                "プリキュア！アラベスクシャワー！！"),
+                "プリキュア！アラベスクシャワー！！",
                 princess.getAttackMessages().get(1));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！マカダミアフラダンス！！\n" +
-                "プリキュア！ハワイアンアロハロエ！！"),
+                "プリキュア！ハワイアンアロハロエ！！",
                 princess.getAttackMessages().get(2));
         assertEquals(List.of("kururin_mirror_change"),
                             princess.getTransformCalls());

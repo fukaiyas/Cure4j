@@ -42,19 +42,17 @@ public class CureHoneyTest extends GirlTestBase {
                 "プリキュア！スパークリングバトンアタック！！\n" +
                 "イエイ！\n" +
                 "命よ、天に帰れ！\n" +
-                TestUtil.waveDash2FullwidthTilde("(ゴクラ〜ク…)")),
+                "(ゴクラ〜ク…)"),
                 honey.getAttackMessages().get(0));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！ポップコーンチア！！\n" +
                 "プリキュア！リボンハートエクスプロージョン！！\n" +
-                "ビクトリー！！"),
+                "ビクトリー！！",
                 honey.getAttackMessages().get(1));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！ココナッツサンバ！！\n" +
                 "プリキュア！マラカスリズムスパーク！！\n" +
-                "マンボ！！"),
+                "マンボ！！",
                 honey.getAttackMessages().get(2));
         assertEquals(List.of("kururin_mirror_change"),
                             honey.getTransformCalls());

@@ -45,19 +45,16 @@ public class CureLovelyTest extends GirlTestBase {
                 "愛よ、天に帰れ！\n" +
                 "(ゴクラ〜ク…)"),
                 lovely.getAttackMessages().get(0));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！チェリーフラメンコ！\n" +
                 "プリキュア！パッションダイナマイト！！\n" +
-                "オーレ！"),
+                "オーレ！",
                 lovely.getAttackMessages().get(1));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアくるりんミラーチェンジ！ロリポップヒップポップ！！！\n" +
-                "プリキュア！ポップンソニックアタック！！"),
+                "プリキュア！ポップンソニックアタック！！",
                 lovely.getAttackMessages().get(2));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "プリキュア！フォーエバーハピネスシャワー！！"),
+        assertEquals("プリキュア！フォーエバーハピネスシャワー！！",
                 lovely.getAttackMessages().get(3));
         assertEquals(List.of("kururin_mirror_change"),
                             lovely.getTransformCalls());

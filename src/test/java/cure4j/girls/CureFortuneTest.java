@@ -41,17 +41,15 @@ public class CureFortuneTest extends GirlTestBase {
                 "フォーチュンタンバリン！\n" +
                 "プリキュア！スターライトアセンション！！\n" +
                 "星よ、天に帰れ！\n" +
-                TestUtil.waveDash2FullwidthTilde("(ゴクラ〜ク…)")),
+                "(ゴクラ〜ク…)"),
                 fortune.getAttackMessages().get(0));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアきらりんスターシンフォニー！パインアラビアン！\n" +
-                "プリキュア！オリエンタルドリーム！"),
+                "プリキュア！オリエンタルドリーム！",
                 fortune.getAttackMessages().get(1));
-        assertEquals(TestUtil.waveDash2FullwidthTilde(
-                "(かわルンルン！)\n" +
+        assertEquals("(かわルンルン！)\n" +
                 "プリキュアきらりんスターシンフォニー！あんみつこまち！\n" +
-                "プリキュア！桜吹雪の舞！"),
+                "プリキュア！桜吹雪の舞！",
                 fortune.getAttackMessages().get(2));
         assertEquals(List.of("kirarin_star_symphony"),
                             fortune.getTransformCalls());
