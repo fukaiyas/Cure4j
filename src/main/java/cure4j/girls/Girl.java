@@ -7,6 +7,7 @@ import cure4j.util.Listream;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class Girl <G extends Girl<G>>{
 
@@ -200,15 +201,14 @@ public abstract class Girl <G extends Girl<G>>{
             Map<String, Object> styles = (Map<String, Object>)config.get("transform_styles");
             List<String> girlNamesList = new ArrayList<>();
             List<String> precureNamesList = new ArrayList<>();
-            List<PrecureColor> colorsList = new ArrayList<>();
+            List<String> colorsList = new ArrayList<>();
             List<LocalDate> createdDatesList = new ArrayList<>();
             List<String> transformMessagesList = new ArrayList<>();
             List<String> attackMessagesList = new ArrayList<>();
             //変身前(index=0)
             girlNamesList.add((String)config.get("girl_name"));
             precureNamesList.add((String)config.get("precure_name"));
-            PrecureColor defaultColor = PrecureColor.valueOf(config.get("color").toString().toUpperCase());
-            colorsList.add(defaultColor);
+            colorsList.add((String)config.get("color"));
             createdDatesList.add((LocalDate)config.get("created_date"));
             transformMessagesList.add("");//変身前なのでない
             //attack_messageはインデックス調整が入るので変身前用は不要
@@ -218,10 +218,9 @@ public abstract class Girl <G extends Girl<G>>{
                     .map(l -> (Map<String, Object>)styles.get(l.configKey()))
                     .forEachOrdered(m -> {
                         girlNamesList.add((String)m.get("girl_name"));
-                        precureNamesList.add((String)m.get("precure_name"));
-                        String color = (String)m.get("color");
-                        colorsList.add(color == null ? defaultColor : PrecureColor.valueOf(color.toUpperCase()));
-                        createdDatesList.add((LocalDate)m.get("created_date"));
+                        precureNamesList.add((String)m.getOrDefault("precure_name", precureNamesList.get(0)));
+                        colorsList.add((String)m.getOrDefault("color", colorsList.get(0)));
+                        createdDatesList.add((LocalDate)m.getOrDefault("created_date", createdDatesList.get(0)));
                         transformMessagesList.add((String)m.get("transform_message"));
                         attackMessagesList.addAll((List<String>)m.get("attack_messages"));
                         //attack_messages はListだが、まほプリではそれぞれ1要素ずつとして決め打ちしている
@@ -229,7 +228,10 @@ public abstract class Girl <G extends Girl<G>>{
                     });
             this.girlNames = new Listream<>(girlNamesList);
             this.precureNames = new Listream<>(precureNamesList);
-            this.colors = new Listream<>(colorsList);
+            this.colors = new Listream<>(
+                    colorsList.stream()
+                            .map(c -> PrecureColor.valueOf(c.toUpperCase()))
+                            .collect(Collectors.toList()));
             this.createdDates = new Listream<>(createdDatesList);
             this.transformMessages = new Listream<>(transformMessagesList);
             this.attackMessages = new Listream<>(attackMessagesList);
