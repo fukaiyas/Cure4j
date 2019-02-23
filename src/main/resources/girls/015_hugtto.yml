@@ -42,7 +42,7 @@ cure_ange: &cure_ange
   # extra_names:
   attack_messages:
     - |-
-      フレフレ！ハート・フェーザー！
+      フレフレ！ハート・フェザー！
   transform_calls:
     - heart_kiratto
 ange:
