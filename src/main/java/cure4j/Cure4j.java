@@ -81,6 +81,11 @@ public final class Cure4j {
         public static final CureMacherie macherie = GirlsLoader.get("cure_macherie");
         public static final CureAmour amour = GirlsLoader.get("cure_amour");
 
+        public static final CureStar star = GirlsLoader.get("cure_star");
+        public static final CureMilky milky = GirlsLoader.get("cure_milky");
+        public static final CureSoleil soleil = GirlsLoader.get("cure_soleil");
+        public static final CureSelene selene = GirlsLoader.get("cure_selene");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 
