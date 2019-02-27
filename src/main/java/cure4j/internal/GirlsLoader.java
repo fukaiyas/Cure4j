@@ -110,8 +110,8 @@ public class GirlsLoader {
     public static Listream<Girl<?>> getAllGirls(){
         return new Listream<Girl<?>>(
                 GIRL_INSTANCE.values().stream()
+                        .sorted(Comparator.comparing(Girl::createdDate)) //TODO 本当は同じ日に登場したキャラクターにも順序をつけたい
                         .distinct()
-                        .sorted(Comparator.comparing(Girl::createdDate))
                         .collect(Collectors.toList()));
     }
     public static <T extends Girl<?>> T get(String girlName){
