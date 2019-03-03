@@ -83,8 +83,9 @@ cure_soleil: &cure_soleil
     あー！
     宇宙を照らす！灼熱のきらめき！キュアソレイユ！
   # extra_names:
-  # attack_messages:
-  #   - |-
+  attack_messages:
+    - |-
+      プリキュア！ソレイユシュート！
   transform_calls:
     - color_charge
 soleil:
@@ -113,8 +114,9 @@ cure_selene: &cure_selene
     あー！
     夜空に輝く！神秘の月あかり！キュアセレーネ！
   # extra_names:
-  # attack_messages:
-  #   - |-
+  attack_messages:
+    - |-
+      プリキュア！セレーネアロー！
   transform_calls:
     - color_charge
 selene:
