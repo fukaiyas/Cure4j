@@ -50,6 +50,10 @@ public abstract class Girl <G extends Girl<G>>{
 
     public abstract LocalDate createdDate();
 
+    public LocalDate firstCreatedDate(){
+        return createdDate();
+    }
+
     public String fullName() {
         return humanFullName.orElse(humanName);
     }
@@ -258,6 +262,11 @@ public abstract class Girl <G extends Girl<G>>{
         @Override
         public LocalDate createdDate() {
             return createdDates.get(current);
+        }
+
+        @Override
+        public LocalDate firstCreatedDate(){
+            return createdDates.get(0);
         }
 
         @Override

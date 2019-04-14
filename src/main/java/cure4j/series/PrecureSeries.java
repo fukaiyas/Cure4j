@@ -61,7 +61,7 @@ public class PrecureSeries extends Series {
                 .distinct()
                 .collect(Collectors.toList());
         return Girl.allGirls()
-                .filter(g -> g.createdDate().isBefore(lastDate))
+                .filter(g -> g.firstCreatedDate().isBefore(lastDate))
                 .filter(g -> !extraGirls.contains(g));
     }
 
