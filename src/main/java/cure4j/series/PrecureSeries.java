@@ -31,6 +31,7 @@ public class PrecureSeries extends Series {
     public final Series mahoGirls = SeriesLoader.get("maho_girls");
     public final Series aLaMode = SeriesLoader.get("a_la_mode");
     public final Series hugtto = SeriesLoader.get("hugtto");
+    public final Series starTwinkle = SeriesLoader.get("star_twinkle");
 
     public Series find(String seriesName){
         return SeriesLoader.get(seriesName);
@@ -42,6 +43,9 @@ public class PrecureSeries extends Series {
                     .sorted((s1, s2) -> s1.startedDate.compareTo(s2.startedDate))
                     .collect(Collectors.toList()));
 
+    public Listream<Girl<?>> allGirls(){
+        return Girl.allGirls();
+    }
     public Listream<Girl<?>> allStars(){
         return allStars(DateUtil.currentDate());
     }
@@ -49,11 +53,9 @@ public class PrecureSeries extends Series {
         return allStars(DateUtil.parseDate(date));
     }
     public Listream<Girl<?>> allStars(Movie movie){
-        //FIXME 本来はオールスターズ系(3世代系じゃない)だけ指定可能にしたいかも？
         return new Listream<>(allStars(movie.startedDate), movie.extraGirls);
     }
     public Listream<Girl<?>> allStars(LocalDate date){
-        //FIXME (本来はmemories決め打ちではなく、オールスターズとしての最新の作品の日付にするべき？)
         LocalDate lastDate = date.isBefore(Movie.memories.startedDate) ?
                 date : Movie.memories.startedDate;
         List<Girl<?>> extraGirls = Movie.movies

@@ -83,6 +83,7 @@ public class GirlsLoader {
             entry("cure_milky", CureMilky.class),
             entry("cure_soleil", CureSoleil.class),
             entry("cure_selene", CureSelene.class),
+            entry("cure_cosmo", CureCosmo.class),
 
             entry("cure_echo", CureEcho.class)
     );

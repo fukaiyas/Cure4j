@@ -121,3 +121,34 @@ cure_selene: &cure_selene
     - color_charge
 selene:
   <<: *cure_selene
+
+cure_cosmo: &cure_cosmo
+  girl_name:    cure_cosmo
+  human_name:   ユニ
+  precure_name: キュアコスモ
+  cast_name:    上坂すみれ
+  color:        rainbow
+  created_date: 2019-06-23 # episode 20
+  birthday: 10/11
+  transform_message: |-
+    スターカラーペンダント！
+    カラーチャージ！
+    煌めくー
+    星の力でー
+    憧れのー
+    私えがくよー
+    トゥインクル！トゥインクル！プリキュア！
+    トゥインクル！トゥインクル！プリキュア！
+    トゥインクル！トゥインクル！プリキュア！
+    スター☆トゥインクル！
+    スター☆トゥインクル！プリキュア！
+    あー！
+    銀河に光る虹色のスペクトル！キュアコスモ！
+  # extra_names:
+  attack_messages:
+    - |-
+      プリキュア！コスモシャイニング！
+  transform_calls:
+    - color_charge
+cosmo:
+  <<: *cure_cosmo
