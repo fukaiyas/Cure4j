@@ -32,6 +32,7 @@ public class PrecureSeries extends Series {
     public final Series aLaMode = SeriesLoader.get("a_la_mode");
     public final Series hugtto = SeriesLoader.get("hugtto");
     public final Series starTwinkle = SeriesLoader.get("star_twinkle");
+    public final Series healingood = SeriesLoader.get("healingood");
 
     public Series find(String seriesName){
         return SeriesLoader.get(seriesName);

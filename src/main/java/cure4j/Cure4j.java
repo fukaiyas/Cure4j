@@ -87,6 +87,11 @@ public final class Cure4j {
         public static final CureSelene selene = GirlsLoader.get("cure_selene");
         public static final CureCosmo cosmo = GirlsLoader.get("cure_cosmo");
 
+        public static final CureGrace grace = GirlsLoader.get("cure_grace");
+        public static final CureFontaine fontaine = GirlsLoader.get("cure_fontaine");
+        public static final CureSparkle sparkle = GirlsLoader.get("cure_sparkle");
+        public static final CureEarth earth = GirlsLoader.get("cure_earth");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 

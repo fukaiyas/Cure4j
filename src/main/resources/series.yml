@@ -208,7 +208,7 @@ star_twinkle: &star_twinkle
   series_name: star_twinkle
   title: スター☆トゥインクルプリキュア
   started_date: 2019-02-03
-  # ended_date:   2020-01-
+  ended_date:   2020-01-26
   girls:
     - cure_star
     - cure_milky
@@ -217,3 +217,16 @@ star_twinkle: &star_twinkle
     - cure_cosmo
 star_twinkle_precure:
   <<: *star_twinkle
+#######################################################
+healingood: &healingood
+  series_name: healingood
+  title: ヒーリングっど♥プリキュア
+  started_date: 2020-02-02
+  # ended_date:   2021-01-
+  girls:
+    - cure_grace
+    - cure_fontaine
+    - cure_sparkle
+    - cure_earth
+healingood_precure:
+  <<: *healingood
