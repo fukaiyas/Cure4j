@@ -23,6 +23,8 @@ public class Movie {
     public static final Movie dreamStars = MoviesLoader.get("dream_stars");
     public static final Movie superStars = MoviesLoader.get("super_stars");
     public static final Movie memories = MoviesLoader.get("memories");
+    public static final Movie miracleUniverse = MoviesLoader.get("miracle_universe");
+    public static final Movie miracleLeap = MoviesLoader.get("miracle_leap");
 
     public static final Listream<Movie> movies = new Listream<>(
             MoviesLoader.allEntries().stream()
