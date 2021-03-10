@@ -92,6 +92,11 @@ public final class Cure4j {
         public static final CureSparkle sparkle = GirlsLoader.get("cure_sparkle");
         public static final CureEarth earth = GirlsLoader.get("cure_earth");
 
+        public static final CureSummer summer = GirlsLoader.get("cure_summer");
+        public static final CureCoral coral = GirlsLoader.get("cure_coral");
+        public static final CurePapaya papaya = GirlsLoader.get("cure_papaya");
+        public static final CureFlamingo flamingo = GirlsLoader.get("cure_flamingo");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 

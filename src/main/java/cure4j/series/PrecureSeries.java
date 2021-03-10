@@ -33,6 +33,7 @@ public class PrecureSeries extends Series {
     public final Series hugtto = SeriesLoader.get("hugtto");
     public final Series starTwinkle = SeriesLoader.get("star_twinkle");
     public final Series healingood = SeriesLoader.get("healingood");
+    public final Series tropicalRouge = SeriesLoader.get("tropical_rouge");
 
     public Series find(String seriesName){
         return SeriesLoader.get(seriesName);

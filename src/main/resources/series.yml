@@ -222,7 +222,7 @@ healingood: &healingood
   series_name: healingood
   title: ヒーリングっど♥プリキュア
   started_date: 2020-02-02
-  # ended_date:   2021-01-
+  ended_date:   2021-02-21
   girls:
     - cure_grace
     - cure_fontaine
@@ -230,3 +230,16 @@ healingood: &healingood
     - cure_earth
 healingood_precure:
   <<: *healingood
+#######################################################
+tropical_rouge: &tropical_rouge
+  series_name: tropical_rouge
+  title: トロピカル～ジュ！プリキュア
+  started_date: 2021-02-28
+  # ended_date:   2022-01-30
+  girls:
+    - cure_summer
+    - cure_coral
+    - cure_papaya
+    - cure_flamingo
+tropical_rouge_precure:
+  <<: *tropical_rouge

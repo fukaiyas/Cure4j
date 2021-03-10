@@ -18,7 +18,7 @@ public class SeriesTest_healingood {
         assertEquals("healingood", healingood.seriesName);
         assertEquals("ヒーリングっど♥プリキュア", healingood.title);
         assertEquals(LocalDate.of(2020, 2, 2), healingood.startedDate);
-//        assertEquals(LocalDate.of(2021, 1, 31), healingood.endedDate);
+        assertEquals(LocalDate.of(2021, 2, 21), healingood.endedDate);
         assertEquals(4, healingood.girls.size());
         assertTrue(healingood.girls.contains(Cure.grace));
         assertTrue(healingood.girls.contains(Cure.fontaine));
@@ -35,11 +35,11 @@ public class SeriesTest_healingood {
     void onAir(){
         assertFalse(healingood.isOnAir(LocalDate.of(2020, 2, 1)));
         assertTrue(healingood.isOnAir(LocalDate.of(2020, 2, 2)));
-//        assertTrue(healingood.isOnAir(LocalDate.of(2020, 1, 26)));
-//        assertFalse(healingood.isOnAir(LocalDate.of(2020, 1, 27)));
+        assertTrue(healingood.isOnAir(LocalDate.of(2021, 2, 21)));
+        assertFalse(healingood.isOnAir(LocalDate.of(2021, 2, 22)));
 
         DateUtil.setDefaultCurrentDate();
-        assertTrue(healingood.isOnAir());
+        assertFalse(healingood.isOnAir());
 
         DateUtil.setCurrentDate(LocalDate.of(2020, 8, 8));
         assertTrue(healingood.isOnAir());
