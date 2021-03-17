@@ -37,10 +37,10 @@ cure_coral: &cure_coral
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
-    チーク！
+    リップ！
     アイズ！
     ヘアー！
-    リップ！
+    チーク！
     ドレス！
     きらめく宝石！キュアコーラル！
   # extra_names:
@@ -65,10 +65,10 @@ cure_papaya: &cure_papaya
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
-    チーク！
-    アイズ！
-    ヘアー！
     リップ！
+    チーク！
+    ヘアー！
+    アイズ！
     ドレス！
     ひらめく果実！キュアパパイア！
   # extra_names:
@@ -93,10 +93,10 @@ cure_flamingo: &cure_flamingo
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
+    リップ！
     チーク！
     アイズ！
     ヘアー！
-    リップ！
     ドレス！
     はためく翼！キュアフラミンゴ！
   # extra_names:

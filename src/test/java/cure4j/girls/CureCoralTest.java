@@ -28,10 +28,10 @@ public class CureCoralTest extends GirlTestBase {
         assertEquals("5/9", coral.birthday());
         assertEquals("プリキュア！トロピカルチェンジ！\n" +
                 "レッツメイク！キャッチ！\n" +
-                "チーク！\n" +
+                "リップ！\n" +
                 "アイズ！\n" +
                 "ヘアー！\n" +
-                "リップ！\n" +
+                "チーク！\n" +
                 "ドレス！\n" +
                 "きらめく宝石！キュアコーラル！",
                 coral.getTransformMessage());
@@ -58,10 +58,10 @@ public class CureCoralTest extends GirlTestBase {
         coral.transform();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "チーク！",
+                "リップ！",
                 "アイズ！",
                 "ヘアー！",
-                "リップ！",
+                "チーク！",
                 "ドレス！",
                 "きらめく宝石！キュアコーラル！"),
                 messageTester.messages);
@@ -76,10 +76,10 @@ public class CureCoralTest extends GirlTestBase {
         coral.tropicalChange();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "チーク！",
+                "リップ！",
                 "アイズ！",
                 "ヘアー！",
-                "リップ！",
+                "チーク！",
                 "ドレス！",
                 "きらめく宝石！キュアコーラル！"),
                 messageTester.messages);
