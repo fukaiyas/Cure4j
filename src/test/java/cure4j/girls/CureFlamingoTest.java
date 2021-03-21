@@ -28,9 +28,9 @@ public class CureFlamingoTest extends GirlTestBase {
         assertEquals("10/15", flamingo.birthday());
         assertEquals("プリキュア！トロピカルチェンジ！\n" +
                 "レッツメイク！キャッチ！\n" +
-                "リップ！\n" +
                 "チーク！\n" +
                 "アイズ！\n" +
+                "リップ！\n" +
                 "ヘアー！\n" +
                 "ドレス！\n" +
                 "はためく翼！キュアフラミンゴ！",
@@ -58,9 +58,9 @@ public class CureFlamingoTest extends GirlTestBase {
         flamingo.transform();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "リップ！",
                 "チーク！",
                 "アイズ！",
+                "リップ！",
                 "ヘアー！",
                 "ドレス！",
                 "はためく翼！キュアフラミンゴ！"),
@@ -76,9 +76,9 @@ public class CureFlamingoTest extends GirlTestBase {
         flamingo.tropicalChange();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "リップ！",
                 "チーク！",
                 "アイズ！",
+                "リップ！",
                 "ヘアー！",
                 "ドレス！",
                 "はためく翼！キュアフラミンゴ！"),

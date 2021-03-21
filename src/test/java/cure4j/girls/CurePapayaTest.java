@@ -28,8 +28,8 @@ public class CurePapayaTest extends GirlTestBase {
         assertEquals("11/21", papaya.birthday());
         assertEquals("プリキュア！トロピカルチェンジ！\n" +
                 "レッツメイク！キャッチ！\n" +
-                "リップ！\n" +
                 "チーク！\n" +
+                "リップ！\n" +
                 "ヘアー！\n" +
                 "アイズ！\n" +
                 "ドレス！\n" +
@@ -58,8 +58,8 @@ public class CurePapayaTest extends GirlTestBase {
         papaya.transform();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "リップ！",
                 "チーク！",
+                "リップ！",
                 "ヘアー！",
                 "アイズ！",
                 "ドレス！",
@@ -76,8 +76,8 @@ public class CurePapayaTest extends GirlTestBase {
         papaya.tropicalChange();
         assertEquals(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
-                "リップ！",
                 "チーク！",
+                "リップ！",
                 "ヘアー！",
                 "アイズ！",
                 "ドレス！",

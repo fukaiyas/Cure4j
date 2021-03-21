@@ -65,8 +65,8 @@ cure_papaya: &cure_papaya
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
-    リップ！
     チーク！
+    リップ！
     ヘアー！
     アイズ！
     ドレス！
@@ -93,9 +93,9 @@ cure_flamingo: &cure_flamingo
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
-    リップ！
     チーク！
     アイズ！
+    リップ！
     ヘアー！
     ドレス！
     はためく翼！キュアフラミンゴ！
