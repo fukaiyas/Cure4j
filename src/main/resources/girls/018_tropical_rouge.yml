@@ -60,7 +60,7 @@ cure_papaya: &cure_papaya
   precure_name: キュアパパイア
   cast_name:    石川由依
   color:        yellow
-  created_date: 2021-03-21 # episode 4 (or 2021-03-20 # Tropical-Rouge petit)
+  created_date: 2021-03-21 # episode 4
   birthday:     11/21
   transform_message: |-
     プリキュア！トロピカルチェンジ！
@@ -88,7 +88,7 @@ cure_flamingo: &cure_flamingo
   precure_name: キュアフラミンゴ
   cast_name:    瀬戸麻沙美
   color:        red
-  created_date: 2021-03-28 # episode 5 (or 2021-03-20 # Tropical-Rouge petit)
+  created_date: 2021-03-28 # episode 5
   birthday:     10/15
   transform_message: |-
     プリキュア！トロピカルチェンジ！
