@@ -33,7 +33,9 @@ public class CureCoralTest extends GirlTestBase {
                 "ヘアー！\n" +
                 "チーク！\n" +
                 "ドレス！\n" +
-                "きらめく宝石！キュアコーラル！",
+                "きらめく宝石！キュアコーラル！\n" +
+                "はぁー！\n" +
+                "4人揃って！トロピカル～ジュ！プリキュア！",
                 coral.getTransformMessage());
         assertEquals(0, coral.getExtraNames().size());
         assertEquals(1, coral.getAttackMessages().size());
@@ -63,7 +65,9 @@ public class CureCoralTest extends GirlTestBase {
                 "ヘアー！",
                 "チーク！",
                 "ドレス！",
-                "きらめく宝石！キュアコーラル！"),
+                "きらめく宝石！キュアコーラル！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアコーラル", coral.name());
 
@@ -81,7 +85,9 @@ public class CureCoralTest extends GirlTestBase {
                 "ヘアー！",
                 "チーク！",
                 "ドレス！",
-                "きらめく宝石！キュアコーラル！"),
+                "きらめく宝石！キュアコーラル！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアコーラル", coral.name());
 

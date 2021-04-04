@@ -33,7 +33,9 @@ public class CureFlamingoTest extends GirlTestBase {
                 "リップ！\n" +
                 "ヘアー！\n" +
                 "ドレス！\n" +
-                "はためく翼！キュアフラミンゴ！",
+                "はためく翼！キュアフラミンゴ！\n" +
+                "はぁー！\n" +
+                "4人揃って！トロピカル～ジュ！プリキュア！",
                 flamingo.getTransformMessage());
         assertEquals(0, flamingo.getExtraNames().size());
         assertEquals(1, flamingo.getAttackMessages().size());
@@ -63,7 +65,9 @@ public class CureFlamingoTest extends GirlTestBase {
                 "リップ！",
                 "ヘアー！",
                 "ドレス！",
-                "はためく翼！キュアフラミンゴ！"),
+                "はためく翼！キュアフラミンゴ！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアフラミンゴ", flamingo.name());
 
@@ -81,7 +85,9 @@ public class CureFlamingoTest extends GirlTestBase {
                 "リップ！",
                 "ヘアー！",
                 "ドレス！",
-                "はためく翼！キュアフラミンゴ！"),
+                "はためく翼！キュアフラミンゴ！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアフラミンゴ", flamingo.name());
 

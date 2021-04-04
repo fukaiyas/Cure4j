@@ -33,7 +33,9 @@ public class CurePapayaTest extends GirlTestBase {
                 "ヘアー！\n" +
                 "アイズ！\n" +
                 "ドレス！\n" +
-                "ひらめく果実！キュアパパイア！",
+                "ひらめく果実！キュアパパイア！\n" +
+                "はぁー！\n" +
+                "4人揃って！トロピカル～ジュ！プリキュア！",
                 papaya.getTransformMessage());
         assertEquals(0, papaya.getExtraNames().size());
         assertEquals(1, papaya.getAttackMessages().size());
@@ -63,7 +65,9 @@ public class CurePapayaTest extends GirlTestBase {
                 "ヘアー！",
                 "アイズ！",
                 "ドレス！",
-                "ひらめく果実！キュアパパイア！"),
+                "ひらめく果実！キュアパパイア！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアパパイア", papaya.name());
 
@@ -81,7 +85,9 @@ public class CurePapayaTest extends GirlTestBase {
                 "ヘアー！",
                 "アイズ！",
                 "ドレス！",
-                "ひらめく果実！キュアパパイア！"),
+                "ひらめく果実！キュアパパイア！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアパパイア", papaya.name());
 

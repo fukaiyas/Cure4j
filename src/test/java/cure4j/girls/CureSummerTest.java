@@ -33,7 +33,9 @@ public class CureSummerTest extends GirlTestBase {
                 "ヘアー！\n" +
                 "リップ！\n" +
                 "ドレス！\n" +
-                "ときめく常夏！キュアサマー！",
+                "ときめく常夏！キュアサマー！\n" +
+                "はぁー！\n" +
+                "4人揃って！トロピカル～ジュ！プリキュア！",
                 summer.getTransformMessage());
         assertEquals(0, summer.getExtraNames().size());
         assertEquals(1, summer.getAttackMessages().size());
@@ -63,7 +65,9 @@ public class CureSummerTest extends GirlTestBase {
                 "ヘアー！",
                 "リップ！",
                 "ドレス！",
-                "ときめく常夏！キュアサマー！"),
+                "ときめく常夏！キュアサマー！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアサマー", summer.name());
 
@@ -81,7 +85,9 @@ public class CureSummerTest extends GirlTestBase {
                 "ヘアー！",
                 "リップ！",
                 "ドレス！",
-                "ときめく常夏！キュアサマー！"),
+                "ときめく常夏！キュアサマー！",
+                "はぁー！",
+                "4人揃って！トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアサマー", summer.name());
 
