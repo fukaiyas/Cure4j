@@ -235,11 +235,12 @@ tropical_rouge: &tropical_rouge
   series_name: tropical_rouge
   title: トロピカル～ジュ！プリキュア
   started_date: 2021-02-28
-  # ended_date:   2022-01-30
+  # ended_date:   2021-01-
   girls:
     - cure_summer
     - cure_coral
     - cure_papaya
     - cure_flamingo
+    - cure_lamer
 tropical_rouge_precure:
   <<: *tropical_rouge

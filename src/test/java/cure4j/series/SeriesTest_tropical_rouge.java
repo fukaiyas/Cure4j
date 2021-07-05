@@ -19,11 +19,12 @@ public class SeriesTest_tropical_rouge {
         assertEquals("トロピカル～ジュ！プリキュア", tropical_rouge.title);
         assertEquals(LocalDate.of(2021, 2, 28), tropical_rouge.startedDate);
 //        assertEquals(LocalDate.of(2022, 1, 30), tropical_rouge.endedDate);
-        assertEquals(4, tropical_rouge.girls.size());
+        assertEquals(5, tropical_rouge.girls.size());
         assertTrue(tropical_rouge.girls.contains(Cure.summer));
         assertTrue(tropical_rouge.girls.contains(Cure.coral));
         assertTrue(tropical_rouge.girls.contains(Cure.papaya));
         assertTrue(tropical_rouge.girls.contains(Cure.flamingo));
+        assertTrue(tropical_rouge.girls.contains(Cure.lamer));
     }
 
     @Test

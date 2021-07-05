@@ -186,7 +186,7 @@ public abstract class Girl <G extends Girl<G>>{
             if(other == null || !(other instanceof StandardGirl)){
                 return false;
             }
-            StandardGirl otherGirl = (StandardGirl)other;
+            StandardGirl<?> otherGirl = (StandardGirl<?>)other;
             return girlName.equals(otherGirl.girlName);
         }
     }

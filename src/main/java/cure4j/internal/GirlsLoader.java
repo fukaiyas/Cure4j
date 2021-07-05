@@ -94,6 +94,7 @@ public class GirlsLoader {
             entry("cure_coral", CureCoral.class),
             entry("cure_papaya", CurePapaya.class),
             entry("cure_flamingo", CureFlamingo.class),
+            entry("cure_lamer", CureLamer.class),
 
             entry("cure_echo", CureEcho.class)
     );
