@@ -1,0 +1,50 @@
+cure_precious: &cure_precious
+  girl_name:    cure_precious
+  human_name:   和実ゆい
+  precure_name: キュアプレシャス
+  cast_name:    菱川花菜
+  color:        pink
+  created_date: 2022-02-06 # episode 1
+  # birthday:
+  transform_message: |-
+  # extra_names:
+  attack_messages:
+    - |-
+  transform_calls:
+    -
+precious:
+  <<: *cure_precious
+
+cure_spicy: &cure_spicy
+  girl_name:    cure_spicy
+  human_name:   芙羽ここね
+  precure_name: キュアスパイシー
+  cast_name:    清水理沙
+  color:        blue
+  # created_date: 2022-xx-xx # episode x
+  # birthday:
+  transform_message: |-
+  # extra_names:
+  attack_messages:
+    - |-
+  transform_calls:
+    -
+spicy:
+  <<: *cure_spicy
+
+cure_yumyum: &cure_yumyum
+  girl_name:    cure_yumyum
+  human_name:   華満らん
+  precure_name: キュアヤムヤム
+  cast_name:    井口裕香
+  color:        yellow
+  # created_date: 2022-xx-xx # episode x
+  # birthday:
+  transform_message: |-
+  # extra_names:
+  attack_messages:
+    - |-
+  transform_calls:
+    -
+yumyum:
+  <<: *cure_yumyum
