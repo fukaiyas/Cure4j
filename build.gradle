@@ -8,14 +8,13 @@ targetCompatibility = 11
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     options.compilerArgs << '-Xlint:all'
 }
 dependencies {
-    compile 'org.yaml:snakeyaml:1.21'
+    implementation 'org.yaml:snakeyaml:1.29'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.2'
 }
@@ -27,6 +26,6 @@ test {
 jar {
     dependsOn(test)
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it)}
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it)}
     }
 }
