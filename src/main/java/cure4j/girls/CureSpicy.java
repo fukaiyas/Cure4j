@@ -8,7 +8,7 @@ public class CureSpicy extends Girl.StandardGirl<CureSpicy> {
         super(config);
     }
 
-//    public CurePrecious operation(){
-//        return transform();
-//    }
+    public CureSpicy delicioustandby(){
+        return transform();
+    }
 }

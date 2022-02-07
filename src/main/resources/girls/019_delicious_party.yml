@@ -7,11 +7,29 @@ cure_precious: &cure_precious
   created_date: 2022-02-06 # episode 1
   # birthday:
   transform_message: |-
+    コメー！
+    プリキュア！デリシャスタンバイ！
+    Party Go!
+    ニギニギ
+    コメコメ
+    ハートを
+    コメコメ
+    シェアリンエナジー！
+    コメー！
+    コメコメ
+    あつあつごはんで、みなぎるパワー！
+    キュアプレシャス！
+    おいしい笑顔で満たしてあげる！
   # extra_names:
   attack_messages:
     - |-
+      プリキュア！プレシャストライアングル！
+      はー！
+      はー！
+      お腹いっぱい
+      ごちそうさまでした！
   transform_calls:
-    -
+    - delicioustandby
 precious:
   <<: *cure_precious
 
@@ -28,7 +46,7 @@ cure_spicy: &cure_spicy
   attack_messages:
     - |-
   transform_calls:
-    -
+    - delicioustandby
 spicy:
   <<: *cure_spicy
 
@@ -45,6 +63,6 @@ cure_yumyum: &cure_yumyum
   attack_messages:
     - |-
   transform_calls:
-    -
+    - delicioustandby
 yumyum:
   <<: *cure_yumyum

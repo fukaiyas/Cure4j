@@ -27,19 +27,31 @@ public class CurePreciousTest extends GirlTestBase {
         assertEquals(PrecureColor.PINK, precious.color());
 //        assertTrue(precious.hasBirthday());
 //        assertEquals("3/9", precious.birthday());
-//        assertEquals("\n" +
-//                "\n" +
-//                "",
-//                precious.getTransformMessage());
+        assertEquals("コメー！\n" +
+                "プリキュア！デリシャスタンバイ！\n" +
+                "Party Go!\n" +
+                "ニギニギ\n" +
+                "コメコメ\n" +
+                "ハートを\n" +
+                "コメコメ\n" +
+                "シェアリンエナジー！\n" +
+                "コメー！\n" +
+                "コメコメ\n" +
+                "あつあつごはんで、みなぎるパワー！\n" +
+                "キュアプレシャス！\n" +
+                "おいしい笑顔で満たしてあげる！",
+                precious.getTransformMessage());
         assertEquals(0, precious.getExtraNames().size());
-//        assertEquals(1, precious.getAttackMessages().size());
-//        assertEquals(TestUtil.waveDash2FullwidthTilde(
-//                "\n" +
-//                "\n" +
-//                ""),
-//                precious.getAttackMessages().get(0));
-//        assertEquals(List.of("precure_operation"),
-//                            precious.getTransformCalls());
+        assertEquals(1, precious.getAttackMessages().size());
+        assertEquals(TestUtil.waveDash2FullwidthTilde(
+                "プリキュア！プレシャストライアングル！\n" +
+                "はー！\n" +
+                "はー！\n" +
+                "お腹いっぱい\n" +
+                "ごちそうさまでした！"),
+                precious.getAttackMessages().get(0));
+        assertEquals(List.of("delicioustandby"),
+                            precious.getTransformCalls());
     }
 
     @Test
@@ -53,10 +65,20 @@ public class CurePreciousTest extends GirlTestBase {
 
         assertEquals("和実ゆい", precious.name());
         precious.transform();
-//        assertEquals(List.of("",
-//                "",
-//                ""),
-//                messageTester.messages);
+        assertEquals(List.of("コメー！",
+                "プリキュア！デリシャスタンバイ！",
+                "Party Go!",
+                "ニギニギ",
+                "コメコメ",
+                "ハートを",
+                "コメコメ",
+                "シェアリンエナジー！",
+                "コメー！",
+                "コメコメ",
+                "あつあつごはんで、みなぎるパワー！",
+                "キュアプレシャス！",
+                "おいしい笑顔で満たしてあげる！"),
+                messageTester.messages);
         assertEquals("キュアプレシャス", precious.name());
 
         messageTester.messages.clear();
@@ -65,12 +87,22 @@ public class CurePreciousTest extends GirlTestBase {
         assertEquals("和実ゆい", precious.name());
 
         messageTester.messages.clear();
-//        precious.xxxx();
-//        assertEquals(List.of("",
-//                "",
-//                ""),
-//                messageTester.messages);
-//        assertEquals("キュアプレシャス", precious.name());
+        precious.delicioustandby();
+        assertEquals(List.of("コメー！",
+                "プリキュア！デリシャスタンバイ！",
+                "Party Go!",
+                "ニギニギ",
+                "コメコメ",
+                "ハートを",
+                "コメコメ",
+                "シェアリンエナジー！",
+                "コメー！",
+                "コメコメ",
+                "あつあつごはんで、みなぎるパワー！",
+                "キュアプレシャス！",
+                "おいしい笑顔で満たしてあげる！"),
+                messageTester.messages);
+        assertEquals("キュアプレシャス", precious.name());
 
         messageTester.messages.clear();
         precious.humanize();
@@ -86,9 +118,11 @@ public class CurePreciousTest extends GirlTestBase {
         precious.transform();
         messageTester.messages.clear();
         precious.attack();
-//        assertEquals(List.of("",
-//                "",
-//                ""),
-//                messageTester.messages);
+        assertEquals(List.of("プリキュア！プレシャストライアングル！",
+                "はー！",
+                "はー！",
+                "お腹いっぱい",
+                "ごちそうさまでした！"),
+                messageTester.messages);
     }
 }

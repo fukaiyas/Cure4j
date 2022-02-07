@@ -32,16 +32,16 @@ public class SeriesTest_delicious_party {
 
     @Test
     void onAir(){
-//        assertFalse(delicious_party.isOnAir(LocalDate.of(2022, 2, 5)));
-//        assertTrue(delicious_party.isOnAir(LocalDate.of(2022, 2, 6)));
-//        assertTrue(tropical_rouge.isOnAir(LocalDate.of(2023, 1, 29)));
-//        assertFalse(tropical_rouge.isOnAir(LocalDate.of(2023, 1, 30)));
+        assertFalse(delicious_party.isOnAir(LocalDate.of(2022, 2, 5)));
+        assertTrue(delicious_party.isOnAir(LocalDate.of(2022, 2, 6)));
+//        assertTrue(delicious_party.isOnAir(LocalDate.of(2023, 1, 29)));
+//        assertFalse(delicious_party.isOnAir(LocalDate.of(2023, 1, 30)));
 
-//        DateUtil.setDefaultCurrentDate();
-//        assertTrue(delicious_party.isOnAir());
-//
-//        DateUtil.setCurrentDate(LocalDate.of(2022, 7, 14));
-//        assertTrue(delicious_party.isOnAir());
-//        DateUtil.setDefaultCurrentDate();
+        DateUtil.setDefaultCurrentDate();
+        assertTrue(delicious_party.isOnAir());
+
+        DateUtil.setCurrentDate(LocalDate.of(2022, 7, 14));
+        assertTrue(delicious_party.isOnAir());
+        DateUtil.setDefaultCurrentDate();
     }
 }

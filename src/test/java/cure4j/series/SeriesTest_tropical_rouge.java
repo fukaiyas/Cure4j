@@ -36,11 +36,11 @@ public class SeriesTest_tropical_rouge {
     void onAir(){
         assertFalse(tropical_rouge.isOnAir(LocalDate.of(2021, 2, 27)));
         assertTrue(tropical_rouge.isOnAir(LocalDate.of(2021, 2, 28)));
-//        assertTrue(tropical_rouge.isOnAir(LocalDate.of(2022, 1, 30)));
-//        assertFalse(tropical_rouge.isOnAir(LocalDate.of(2022, 1, 31)));
+        assertTrue(tropical_rouge.isOnAir(LocalDate.of(2022, 1, 30)));
+        assertFalse(tropical_rouge.isOnAir(LocalDate.of(2022, 1, 31)));
 
         DateUtil.setDefaultCurrentDate();
-        assertTrue(tropical_rouge.isOnAir());
+        assertFalse(tropical_rouge.isOnAir());
 
         DateUtil.setCurrentDate(LocalDate.of(2021, 7, 14));
         assertTrue(tropical_rouge.isOnAir());
