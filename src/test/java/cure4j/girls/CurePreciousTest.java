@@ -25,21 +25,22 @@ public class CurePreciousTest extends GirlTestBase {
         assertEquals("菱川花菜", precious.castName());
         assertEquals(LocalDate.of(2022, 2, 6), precious.createdDate());
         assertEquals(PrecureColor.PINK, precious.color());
-//        assertTrue(precious.hasBirthday());
-//        assertEquals("3/9", precious.birthday());
+        assertTrue(precious.hasBirthday());
+        assertEquals("8/31", precious.birthday());
         assertEquals("コメー！\n" +
                 "プリキュア！デリシャスタンバイ！\n" +
                 "Party Go!\n" +
-                "ニギニギ\n" +
-                "コメコメ\n" +
-                "ハートを\n" +
-                "コメコメ\n" +
-                "シェアリンエナジー！\n" +
+                "ニギニギ！\n" +
+                "コメコメ！\n" +
+                "ハートを！\n" +
+                "コメコメ！\n" +
+                "シェアリングエナジー！\n" +
                 "コメー！\n" +
-                "コメコメ\n" +
+                "コメコメ！\n" +
                 "あつあつごはんで、みなぎるパワー！\n" +
                 "キュアプレシャス！\n" +
-                "おいしい笑顔で満たしてあげる！",
+                "おいしい笑顔で満たしてあげる！\n" +
+                "デリシャスパーティ♡プリキュア！",
                 precious.getTransformMessage());
         assertEquals(0, precious.getExtraNames().size());
         assertEquals(1, precious.getAttackMessages().size());
@@ -68,16 +69,17 @@ public class CurePreciousTest extends GirlTestBase {
         assertEquals(List.of("コメー！",
                 "プリキュア！デリシャスタンバイ！",
                 "Party Go!",
-                "ニギニギ",
-                "コメコメ",
-                "ハートを",
-                "コメコメ",
-                "シェアリンエナジー！",
+                "ニギニギ！",
+                "コメコメ！",
+                "ハートを！",
+                "コメコメ！",
+                "シェアリングエナジー！",
                 "コメー！",
-                "コメコメ",
+                "コメコメ！",
                 "あつあつごはんで、みなぎるパワー！",
                 "キュアプレシャス！",
-                "おいしい笑顔で満たしてあげる！"),
+                "おいしい笑顔で満たしてあげる！",
+                "デリシャスパーティ♡プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアプレシャス", precious.name());
 
@@ -91,16 +93,17 @@ public class CurePreciousTest extends GirlTestBase {
         assertEquals(List.of("コメー！",
                 "プリキュア！デリシャスタンバイ！",
                 "Party Go!",
-                "ニギニギ",
-                "コメコメ",
-                "ハートを",
-                "コメコメ",
-                "シェアリンエナジー！",
+                "ニギニギ！",
+                "コメコメ！",
+                "ハートを！",
+                "コメコメ！",
+                "シェアリングエナジー！",
                 "コメー！",
-                "コメコメ",
+                "コメコメ！",
                 "あつあつごはんで、みなぎるパワー！",
                 "キュアプレシャス！",
-                "おいしい笑顔で満たしてあげる！"),
+                "おいしい笑顔で満たしてあげる！",
+                "デリシャスパーティ♡プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアプレシャス", precious.name());
 

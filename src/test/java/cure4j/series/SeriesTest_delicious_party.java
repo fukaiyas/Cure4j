@@ -19,7 +19,7 @@ public class SeriesTest_delicious_party {
         assertEquals("デリシャスパーティ♥プリキュア", delicious_party.title);
         assertEquals(LocalDate.of(2022, 2, 6), delicious_party.startedDate);
 //        assertEquals(LocalDate.of(2023, 1, 29), delicious_party.endedDate);
-        assertEquals(3, delicious_party.girls.size());
+        assertEquals(4, delicious_party.girls.size());
         assertTrue(delicious_party.girls.contains(Cure.precious));
         assertTrue(delicious_party.girls.contains(Cure.spicy));
         assertTrue(delicious_party.girls.contains(Cure.yumyum));

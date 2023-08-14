@@ -99,6 +99,7 @@ public class GirlsLoader {
             entry("cure_precious", CurePrecious.class),
             entry("cure_spicy", CureSpicy.class),
             entry("cure_yumyum", CureYumyum.class),
+            entry("cure_finale", CureFinale.class),
 
             entry("cure_echo", CureEcho.class)
     );
