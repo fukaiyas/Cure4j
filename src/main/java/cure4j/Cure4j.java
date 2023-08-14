@@ -98,6 +98,11 @@ public final class Cure4j {
         public static final CureFlamingo flamingo = GirlsLoader.get("cure_flamingo");
         public static final CureLamer lamer = GirlsLoader.get("cure_lamer");
 
+        public static final CurePrecious precious = GirlsLoader.get("cure_precious");
+        public static final CureSpicy spicy = GirlsLoader.get("cure_spicy");
+        public static final CureYumyum yumyum = GirlsLoader.get("cure_yumyum");
+        public static final CureFinale finale = GirlsLoader.get("cure_finale");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 

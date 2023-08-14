@@ -9,6 +9,7 @@ public enum PrecureColor {
     RED,
     PURPLE,
     GREEN,
+    GOLD,
     RAINBOW;
 
     @Override
