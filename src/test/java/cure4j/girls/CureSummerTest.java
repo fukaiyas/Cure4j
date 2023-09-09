@@ -9,7 +9,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static cure4j.Cure4j.Cure;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CureSummerTest extends GirlTestBase {
 
@@ -26,24 +27,27 @@ public class CureSummerTest extends GirlTestBase {
         assertEquals(LocalDate.of(2021, 2, 28), summer.createdDate());
         assertEquals(PrecureColor.WHITE, summer.color());
         assertEquals("8/1", summer.birthday());
-        assertEquals("プリキュア！トロピカルチェンジ！\n" +
-                "レッツメイク！キャッチ！\n" +
-                "チーク！\n" +
-                "アイズ！\n" +
-                "ヘアー！\n" +
-                "リップ！\n" +
-                "ドレス！\n" +
-                "ときめく常夏！キュアサマー！\n" +
-                "はぁー！\n" +
-                "4人揃って！トロピカル～ジュ！プリキュア！",
+        assertEquals("""
+                プリキュア！トロピカルチェンジ！
+                レッツメイク！キャッチ！
+                チーク！
+                アイズ！
+                ヘアー！
+                リップ！
+                ドレス！
+                ときめく常夏！キュアサマー！
+                はぁー！
+                ${random_transform_word}
+                トロピカル～ジュ！プリキュア！""",
                 summer.getTransformMessage());
         assertEquals(0, summer.getExtraNames().size());
         assertEquals(1, summer.getAttackMessages().size());
-        assertEquals("ハートルージュロッド！\n" +
-                "プリキュア！おてんとサマーストライク！\n" +
-                "ビクトリー！",
+        assertEquals("""
+                ハートルージュロッド！
+                プリキュア！おてんとサマーストライク！
+                ビクトリー！""",
                 summer.getAttackMessages().get(0));
-        assertEquals(List.of("precure_tropical_change"),
+        assertEquals(List.of("tropical_change"),
                             summer.getTransformCalls());
     }
 
@@ -58,7 +62,7 @@ public class CureSummerTest extends GirlTestBase {
 
         assertEquals("夏海まなつ", summer.name());
         summer.transform();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "アイズ！",
@@ -67,7 +71,8 @@ public class CureSummerTest extends GirlTestBase {
                 "ドレス！",
                 "ときめく常夏！キュアサマー！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアサマー", summer.name());
 
@@ -78,7 +83,7 @@ public class CureSummerTest extends GirlTestBase {
 
         messageTester.messages.clear();
         summer.tropicalChange();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "アイズ！",
@@ -87,7 +92,8 @@ public class CureSummerTest extends GirlTestBase {
                 "ドレス！",
                 "ときめく常夏！キュアサマー！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアサマー", summer.name());
 

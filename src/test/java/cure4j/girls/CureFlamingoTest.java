@@ -2,6 +2,7 @@ package cure4j.girls;
 
 import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
+import test.util.TestUtil;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -26,24 +27,27 @@ public class CureFlamingoTest extends GirlTestBase {
         assertEquals(LocalDate.of(2021, 3, 28), flamingo.createdDate());
         assertEquals(PrecureColor.RED, flamingo.color());
         assertEquals("10/15", flamingo.birthday());
-        assertEquals("プリキュア！トロピカルチェンジ！\n" +
-                "レッツメイク！キャッチ！\n" +
-                "チーク！\n" +
-                "アイズ！\n" +
-                "リップ！\n" +
-                "ヘアー！\n" +
-                "ドレス！\n" +
-                "はためく翼！キュアフラミンゴ！\n" +
-                "はぁー！\n" +
-                "4人揃って！トロピカル～ジュ！プリキュア！",
+        assertEquals("""
+                プリキュア！トロピカルチェンジ！
+                レッツメイク！キャッチ！
+                チーク！
+                アイズ！
+                リップ！
+                ヘアー！
+                ドレス！
+                はためく翼！キュアフラミンゴ！
+                はぁー！
+                ${random_transform_word}
+                トロピカル～ジュ！プリキュア！""",
                 flamingo.getTransformMessage());
         assertEquals(0, flamingo.getExtraNames().size());
         assertEquals(1, flamingo.getAttackMessages().size());
-        assertEquals("ハートルージュロッド！\n" +
-                "プリキュア！ぶっとびフラミンゴスマッシュ！\n" +
-                "ビクトリー！",
+        assertEquals("""
+                ハートルージュロッド！
+                プリキュア！ぶっとびフラミンゴスマッシュ！
+                ビクトリー！""",
                 flamingo.getAttackMessages().get(0));
-        assertEquals(List.of("precure_tropical_change"),
+        assertEquals(List.of("tropical_change"),
                             flamingo.getTransformCalls());
     }
 
@@ -58,7 +62,7 @@ public class CureFlamingoTest extends GirlTestBase {
 
         assertEquals("滝沢あすか", flamingo.name());
         flamingo.transform();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "アイズ！",
@@ -67,7 +71,8 @@ public class CureFlamingoTest extends GirlTestBase {
                 "ドレス！",
                 "はためく翼！キュアフラミンゴ！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアフラミンゴ", flamingo.name());
 
@@ -78,7 +83,7 @@ public class CureFlamingoTest extends GirlTestBase {
 
         messageTester.messages.clear();
         flamingo.tropicalChange();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "アイズ！",
@@ -87,7 +92,8 @@ public class CureFlamingoTest extends GirlTestBase {
                 "ドレス！",
                 "はためく翼！キュアフラミンゴ！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアフラミンゴ", flamingo.name());
 

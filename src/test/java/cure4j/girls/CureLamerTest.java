@@ -2,6 +2,7 @@ package cure4j.girls;
 
 import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
+import test.util.TestUtil;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -26,19 +27,24 @@ public class CureLamerTest extends GirlTestBase {
         assertEquals(LocalDate.of(2021, 6, 20), lamer.createdDate());
         assertEquals(PrecureColor.BLUE, lamer.color());
         assertEquals("6/30", lamer.birthday());
-        assertEquals("プリキュア！トロピカルチェンジ！\n" +
-                "レッツメイク！キャッチ！\n" +
-                "フェイス！\n" +
-                "ネイル！\n" +
-                "ドレス！\n" +
-                "ゆらめく大海原！キュアラメール！",
+        assertEquals("""
+                プリキュア！トロピカルチェンジ！
+                レッツメイク！キャッチ！
+                フェイス！
+                ネイル！
+                ドレス！
+                ゆらめく大海原！キュアラメール！
+                はぁー！
+                ${random_transform_word}
+                トロピカル～ジュ！プリキュア！""",
                 lamer.getTransformMessage());
         assertEquals(0, lamer.getExtraNames().size());
         assertEquals(1, lamer.getAttackMessages().size());
-        assertEquals("プリキュア！くるくるラメールストリーム！\n" +
-                "ビクトリー！",
+        assertEquals("""
+                プリキュア！くるくるラメールストリーム！
+                ビクトリー！""",
                 lamer.getAttackMessages().get(0));
-        assertEquals(List.of("precure_tropical_change"),
+        assertEquals(List.of("tropical_change"),
                             lamer.getTransformCalls());
     }
 
@@ -53,12 +59,15 @@ public class CureLamerTest extends GirlTestBase {
 
         assertEquals("ローラ・ラメール", lamer.name());
         lamer.transform();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "フェイス！",
                 "ネイル！",
                 "ドレス！",
-                "ゆらめく大海原！キュアラメール！"),
+                "ゆらめく大海原！キュアラメール！",
+                "はぁー！",
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアラメール", lamer.name());
 
@@ -69,12 +78,15 @@ public class CureLamerTest extends GirlTestBase {
 
         messageTester.messages.clear();
         lamer.tropicalChange();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "フェイス！",
                 "ネイル！",
                 "ドレス！",
-                "ゆらめく大海原！キュアラメール！"),
+                "ゆらめく大海原！キュアラメール！",
+                "はぁー！",
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアラメール", lamer.name());
 
