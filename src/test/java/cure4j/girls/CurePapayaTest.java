@@ -2,6 +2,7 @@ package cure4j.girls;
 
 import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
+import test.util.TestUtil;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -26,24 +27,27 @@ public class CurePapayaTest extends GirlTestBase {
         assertEquals(LocalDate.of(2021, 3, 21), papaya.createdDate());
         assertEquals(PrecureColor.YELLOW, papaya.color());
         assertEquals("11/21", papaya.birthday());
-        assertEquals("プリキュア！トロピカルチェンジ！\n" +
-                "レッツメイク！キャッチ！\n" +
-                "チーク！\n" +
-                "リップ！\n" +
-                "ヘアー！\n" +
-                "アイズ！\n" +
-                "ドレス！\n" +
-                "ひらめく果実！キュアパパイア！\n" +
-                "はぁー！\n" +
-                "4人揃って！トロピカル～ジュ！プリキュア！",
+        assertEquals("""
+                プリキュア！トロピカルチェンジ！
+                レッツメイク！キャッチ！
+                チーク！
+                リップ！
+                ヘアー！
+                アイズ！
+                ドレス！
+                ひらめく果実！キュアパパイア！
+                はぁー！
+                ${random_transform_word}
+                トロピカル～ジュ！プリキュア！""",
                 papaya.getTransformMessage());
         assertEquals(0, papaya.getExtraNames().size());
         assertEquals(1, papaya.getAttackMessages().size());
-        assertEquals("ハートルージュロッド！\n" +
-                "プリキュア！ぱんぱかパパイアショット！\n" +
-                "ビクトリー！",
+        assertEquals("""
+                ハートルージュロッド！
+                プリキュア！ぱんぱかパパイアショット！
+                ビクトリー！""",
                 papaya.getAttackMessages().get(0));
-        assertEquals(List.of("precure_tropical_change"),
+        assertEquals(List.of("tropical_change"),
                             papaya.getTransformCalls());
     }
 
@@ -58,7 +62,7 @@ public class CurePapayaTest extends GirlTestBase {
 
         assertEquals("一ノ瀬みのり", papaya.name());
         papaya.transform();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "リップ！",
@@ -67,7 +71,8 @@ public class CurePapayaTest extends GirlTestBase {
                 "ドレス！",
                 "ひらめく果実！キュアパパイア！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアパパイア", papaya.name());
 
@@ -78,7 +83,7 @@ public class CurePapayaTest extends GirlTestBase {
 
         messageTester.messages.clear();
         papaya.tropicalChange();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "チーク！",
                 "リップ！",
@@ -87,7 +92,8 @@ public class CurePapayaTest extends GirlTestBase {
                 "ドレス！",
                 "ひらめく果実！キュアパパイア！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアパパイア", papaya.name());
 

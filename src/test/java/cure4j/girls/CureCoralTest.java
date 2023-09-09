@@ -2,6 +2,7 @@ package cure4j.girls;
 
 import cure4j.util.PrecureColor;
 import org.junit.jupiter.api.Test;
+import test.util.TestUtil;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -26,24 +27,27 @@ public class CureCoralTest extends GirlTestBase {
         assertEquals(LocalDate.of(2021, 3, 14), coral.createdDate());
         assertEquals(PrecureColor.PURPLE, coral.color());
         assertEquals("5/9", coral.birthday());
-        assertEquals("プリキュア！トロピカルチェンジ！\n" +
-                "レッツメイク！キャッチ！\n" +
-                "リップ！\n" +
-                "アイズ！\n" +
-                "ヘアー！\n" +
-                "チーク！\n" +
-                "ドレス！\n" +
-                "きらめく宝石！キュアコーラル！\n" +
-                "はぁー！\n" +
-                "4人揃って！トロピカル～ジュ！プリキュア！",
+        assertEquals("""
+                プリキュア！トロピカルチェンジ！
+                レッツメイク！キャッチ！
+                リップ！
+                アイズ！
+                ヘアー！
+                チーク！
+                ドレス！
+                きらめく宝石！キュアコーラル！
+                はぁー！
+                ${random_transform_word}
+                トロピカル～ジュ！プリキュア！""",
                 coral.getTransformMessage());
         assertEquals(0, coral.getExtraNames().size());
         assertEquals(1, coral.getAttackMessages().size());
-        assertEquals("ハートルージュロッド！\n" +
-                "プリキュア！もこもこコーラルディフュージョン！\n" +
-                "ビクトリー！",
+        assertEquals("""
+                ハートルージュロッド！
+                プリキュア！もこもこコーラルディフュージョン！
+                ビクトリー！""",
                 coral.getAttackMessages().get(0));
-        assertEquals(List.of("precure_tropical_change"),
+        assertEquals(List.of("tropical_change"),
                             coral.getTransformCalls());
     }
 
@@ -58,7 +62,7 @@ public class CureCoralTest extends GirlTestBase {
 
         assertEquals("涼村さんご", coral.name());
         coral.transform();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "リップ！",
                 "アイズ！",
@@ -67,7 +71,8 @@ public class CureCoralTest extends GirlTestBase {
                 "ドレス！",
                 "きらめく宝石！キュアコーラル！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアコーラル", coral.name());
 
@@ -78,7 +83,7 @@ public class CureCoralTest extends GirlTestBase {
 
         messageTester.messages.clear();
         coral.tropicalChange();
-        assertEquals(List.of("プリキュア！トロピカルチェンジ！",
+        TestUtil.assertVariableList(List.of("プリキュア！トロピカルチェンジ！",
                 "レッツメイク！キャッチ！",
                 "リップ！",
                 "アイズ！",
@@ -87,7 +92,8 @@ public class CureCoralTest extends GirlTestBase {
                 "ドレス！",
                 "きらめく宝石！キュアコーラル！",
                 "はぁー！",
-                "4人揃って！トロピカル～ジュ！プリキュア！"),
+                "*any*",
+                "トロピカル～ジュ！プリキュア！"),
                 messageTester.messages);
         assertEquals("キュアコーラル", coral.name());
 
