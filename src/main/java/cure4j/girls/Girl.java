@@ -299,6 +299,29 @@ public abstract class Girl <G extends Girl<G>>{
         }
     }
 
+    public static class TropicalGirl<G extends TropicalGirl<G>> extends StandardGirl<TropicalGirl<G>> {
+
+        private static Random random = new Random(System.currentTimeMillis());
+
+        protected final List<String> randomTransformWords;
+
+        public TropicalGirl(Map<String, Object> config) {
+            super(config);
+            randomTransformWords = (List<String>)config.get("random_transform_words");
+        }
+
+        @Override
+        public G transform(){
+            current = (current + 1) % allNames.size();
+            if(current == 1){
+                String randomMessage = randomTransformWords.get(random.nextInt(randomTransformWords.size()));
+                String replaced = transformMessage.replace("${random_transform_word}", randomMessage);
+                printByLine(replaced);
+            }
+            return (G)this;
+        }
+    }
+
     public static class MessagePrinter {
         public void sleepAndPrintln(double sec, String message){
             try {
