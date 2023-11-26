@@ -101,11 +101,22 @@ public class GirlsLoader {
             entry("cure_yumyum", CureYumyum.class),
             entry("cure_finale", CureFinale.class),
 
+            entry("cure_sky", CureSky.class),
+            entry("cure_prism", CurePrism.class),
+            entry("cure_wing", CureWing.class),
+            entry("cure_butterfly", CureButterfly.class),
+            entry("cure_majesty", CureMajesty.class),
+
             entry("cure_echo", CureEcho.class)
     );
     private static Map.Entry<String, Class<? extends Girl<?>>>
             entry(String girlName, Class<? extends Girl<?>> girlClass){
-        return new AbstractMap.SimpleImmutableEntry<>(girlName, girlClass);
+        try {
+            return new AbstractMap.SimpleImmutableEntry<>(girlName, girlClass);
+        }catch (Throwable t){
+            t.printStackTrace();
+            throw  t;
+        }
     }
 
     private static final List<String> FILES = List.of(
@@ -128,6 +139,7 @@ public class GirlsLoader {
             "/girls/017_healingood.yml",
             "/girls/018_tropical_rouge.yml",
             "/girls/019_delicious_party.yml",
+            "/girls/020_hirogaru_sky.yml",
             "/girls/movie.yml"
     );
 
