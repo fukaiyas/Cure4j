@@ -35,6 +35,7 @@ public class PrecureSeries extends Series {
     public final Series healingood = SeriesLoader.get("healingood");
     public final Series tropicalRouge = SeriesLoader.get("tropical_rouge");
     public final Series deliciousParty = SeriesLoader.get("delicious_party");
+    public final Series hirogaruSky = SeriesLoader.get("hirogaru_sky");
 
     public Series find(String seriesName){
         return SeriesLoader.get(seriesName);

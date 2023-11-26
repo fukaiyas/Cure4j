@@ -103,6 +103,12 @@ public final class Cure4j {
         public static final CureYumyum yumyum = GirlsLoader.get("cure_yumyum");
         public static final CureFinale finale = GirlsLoader.get("cure_finale");
 
+        public static final CureSky sky = GirlsLoader.get("cure_sky");
+        public static final CurePrism prism = GirlsLoader.get("cure_prism");
+        public static final CureWing wing = GirlsLoader.get("cure_wing");
+        public static final CureButterfly butterfly = GirlsLoader.get("cure_butterfly");
+        public static final CureMajesty majesty = GirlsLoader.get("cure_majesty");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 

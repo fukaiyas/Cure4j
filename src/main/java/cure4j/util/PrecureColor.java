@@ -6,6 +6,7 @@ public enum PrecureColor {
     PINK,
     BLUE,
     YELLOW,
+    ORANGE,
     RED,
     PURPLE,
     GREEN,
