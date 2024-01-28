@@ -18,7 +18,7 @@ public class SeriesTest_hirogaru_sky {
         assertEquals("hirogaru_sky", hirogaru_sky.seriesName);
         assertEquals("ひろがるスカイ！プリキュア", hirogaru_sky.title);
         assertEquals(LocalDate.of(2023, 2, 5), hirogaru_sky.startedDate);
-//        assertEquals(LocalDate.of(2024, 1, 28), hirogaru_sky.endedDate);
+        assertEquals(LocalDate.of(2024, 1, 28), hirogaru_sky.endedDate);
         assertEquals(5, hirogaru_sky.girls.size());
         assertTrue(hirogaru_sky.girls.contains(Cure.sky));
         assertTrue(hirogaru_sky.girls.contains(Cure.prism));
@@ -36,11 +36,11 @@ public class SeriesTest_hirogaru_sky {
     void onAir(){
         assertFalse(hirogaru_sky.isOnAir(LocalDate.of(2023, 2, 4)));
         assertTrue(hirogaru_sky.isOnAir(LocalDate.of(2023, 2, 5)));
-//        assertTrue(hirogaru_sky.isOnAir(LocalDate.of(2024, 1, 28)));
-//        assertFalse(hirogaru_sky.isOnAir(LocalDate.of(2024, 1, 29)));
+        assertTrue(hirogaru_sky.isOnAir(LocalDate.of(2024, 1, 28)));
+        assertFalse(hirogaru_sky.isOnAir(LocalDate.of(2024, 1, 29)));
 
         DateUtil.setDefaultCurrentDate();
-        assertTrue(hirogaru_sky.isOnAir());
+        assertFalse(hirogaru_sky.isOnAir());
 
         DateUtil.setCurrentDate(LocalDate.of(2023, 7, 14));
         assertTrue(hirogaru_sky.isOnAir());
