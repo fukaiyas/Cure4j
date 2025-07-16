@@ -15,6 +15,7 @@ public class CurePeace extends Girl.StandardGirl<CurePeace> {
                     "ジャンケンポン！\n" +
                     "（%s）\n";
 
+    @SuppressWarnings("unchecked")
     private static final List<String> HANDS = new Listream<>(
             Collections.nCopies(13, "グー"),
             Collections.nCopies(14, "チョキ"),

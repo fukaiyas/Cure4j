@@ -56,6 +56,7 @@ public class PrecureSeries extends Series {
     public Listream<Girl<?>> allStars(String date){
         return allStars(DateUtil.parseDate(date));
     }
+    @SuppressWarnings("unchecked")
     public Listream<Girl<?>> allStars(Movie movie){
         return new Listream<>(allStars(movie.startedDate), movie.extraGirls);
     }

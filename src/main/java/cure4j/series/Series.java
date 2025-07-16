@@ -23,6 +23,7 @@ public class Series {
         this.title = (String)config.get("title");
         this.startedDate = (LocalDate)config.get("started_date");
         this.endedDate = (LocalDate)config.get("ended_date");
+        @SuppressWarnings("unchecked")
         List<String> girlNames = (List<String>)config.get("girls");
         this.girls = new Listream<>(girlNames.stream()
                 .map(name -> (Girl<?>)GirlsLoader.get(name))

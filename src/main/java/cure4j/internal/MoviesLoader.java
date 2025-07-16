@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class MoviesLoader {
 
+    @SuppressWarnings("unchecked")
     private static final Map<String, Movie> MOVIES_INSTANCE =
             LoaderUtil.loadYaml(
                     "/movies.yml",

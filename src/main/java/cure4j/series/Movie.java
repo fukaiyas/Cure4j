@@ -40,6 +40,7 @@ public class Movie {
         return MoviesLoader.get(movieName);
     }
 
+    @SuppressWarnings("unchecked")
     public Movie(Map<String, Object> config){
         this.title = (String)config.get("title");
         this.startedDate = (LocalDate)config.get("started_date");

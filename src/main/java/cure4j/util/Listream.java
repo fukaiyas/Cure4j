@@ -12,6 +12,7 @@ public class Listream<T> implements List<T>, Stream<T> {
     public Listream(){
         this(new ArrayList<>());
     }
+    @SuppressWarnings("unchecked")
     public Listream(List<? extends T>... lists){
         this.list = Arrays.stream(lists)
                 .flatMap(list -> list.stream())

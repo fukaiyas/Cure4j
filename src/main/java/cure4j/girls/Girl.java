@@ -25,6 +25,7 @@ public abstract class Girl <G extends Girl<G>>{
 
     protected int current = 0;
 
+    @SuppressWarnings("unchecked")
     public Girl(Map<String, Object> config) {
         this.humanName = (String)config.get("human_name");
         this.humanFullName = Optional.ofNullable((String)config.get("human_full_name"));
@@ -38,6 +39,7 @@ public abstract class Girl <G extends Girl<G>>{
         return GirlsLoader.getAllGirls();
     }
 
+    @SuppressWarnings("unchecked")
     public static <T extends Girl<?>> T byName(String girlName){
         return(T) GirlsLoader.get(girlName);
     }
@@ -94,6 +96,7 @@ public abstract class Girl <G extends Girl<G>>{
         return birthday.isPresent();
     }
 
+    @SuppressWarnings("unchecked")
     public G humanize(){
         current = 0;
         return (G)this;
@@ -125,6 +128,7 @@ public abstract class Girl <G extends Girl<G>>{
         protected final String transformMessage;
         protected final Listream<String> attackMessages;
 
+        @SuppressWarnings("unchecked")
         public StandardGirl(Map<String, Object> config){
             super(config);
             this.girlName = (String)config.get("girl_name");
@@ -169,6 +173,7 @@ public abstract class Girl <G extends Girl<G>>{
             return attackMessages;
         }
 
+        @SuppressWarnings("unchecked")
         public G transform(){
             current = (current + 1) % allNames.size();
             if(current == 1){
@@ -200,6 +205,7 @@ public abstract class Girl <G extends Girl<G>>{
         protected final Listream<String> transformMessages;
         protected final Listream<String> attackMessages;
 
+        @SuppressWarnings("unchecked")
         public MahoGirl(Map<String, Object> config, LinkleStone[] linkleStones){
             super(config);
             Map<String, Object> styles = (Map<String, Object>)config.get("transform_styles");
@@ -279,6 +285,7 @@ public abstract class Girl <G extends Girl<G>>{
             return transformMessages.get(current);
         }
 
+        @SuppressWarnings("unchecked")
         protected G transform(LinkleStone linkleStone){
             current = linkleStone.index();
             printByLine(transformMessages.get(current));
@@ -294,6 +301,7 @@ public abstract class Girl <G extends Girl<G>>{
             if(other == null || !(other instanceof MahoGirl)){
                 return false;
             }
+            @SuppressWarnings("rawtypes")
             MahoGirl otherGirl = (MahoGirl)other;
             return girlNames.equals(otherGirl.girlNames);
         }
@@ -305,12 +313,14 @@ public abstract class Girl <G extends Girl<G>>{
 
         protected final List<String> randomTransformWords;
 
+        @SuppressWarnings("unchecked")
         public TropicalGirl(Map<String, Object> config) {
             super(config);
             randomTransformWords = (List<String>)config.get("random_transform_words");
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public G transform(){
             current = (current + 1) % allNames.size();
             if(current == 1){

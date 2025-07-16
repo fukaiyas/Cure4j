@@ -152,6 +152,7 @@ public class GirlsLoader {
                         .distinct()
                         .collect(Collectors.toList()));
     }
+    @SuppressWarnings("unchecked")
     public static <T extends Girl<?>> T get(String girlName){
         if(!GIRL_INSTANCE.containsKey(girlName)){
             throw new UnknownGirlException("Unknown girl name : " + girlName);
@@ -159,6 +160,7 @@ public class GirlsLoader {
         return (T)GIRL_INSTANCE.get(girlName);
     }
 
+    @SuppressWarnings("unchecked")
     private static Map<String, Girl<?>> load(){
         Map<String, Girl<?>> result = new HashMap<>();
         for(String path : FILES) {

@@ -1,5 +1,6 @@
 package cure4j.internal;
 
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 import org.yaml.snakeyaml.nodes.Node;
@@ -34,7 +35,7 @@ public class LoaderUtil {
 
     public static class LocalDateConstructor extends SafeConstructor {
         public LocalDateConstructor() {
-            super();
+            super(new LoaderOptions());
             this.yamlConstructors.put(Tag.TIMESTAMP, new ConstructYamlTimestamp() {
                 @Override
                 public Object construct(Node node) {
