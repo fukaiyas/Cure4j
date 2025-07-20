@@ -5,8 +5,6 @@ import cure4j.series.PrecureSeries;
 import cure4j.internal.GirlsLoader;
 import cure4j.internal.SeriesLoader;
 
-import java.time.*;
-
 public final class Cure4j {
 
     public static final PrecureSeries Precure = new PrecureSeries(SeriesLoader.unmarked);
@@ -108,6 +106,11 @@ public final class Cure4j {
         public static final CureWing wing = GirlsLoader.get("cure_wing");
         public static final CureButterfly butterfly = GirlsLoader.get("cure_butterfly");
         public static final CureMajesty majesty = GirlsLoader.get("cure_majesty");
+
+        public static final CureWonderful wonderful = GirlsLoader.get("cure_wonderful");
+        public static final CureFriendy friendy = GirlsLoader.get("cure_friendy");
+        public static final CureNyammy nyammy = GirlsLoader.get("cure_nyammy");
+        public static final CureLillian lillian = GirlsLoader.get("cure_lillian");
 
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
