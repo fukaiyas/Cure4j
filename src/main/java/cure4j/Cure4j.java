@@ -112,6 +112,12 @@ public final class Cure4j {
         public static final CureNyammy nyammy = GirlsLoader.get("cure_nyammy");
         public static final CureLillian lillian = GirlsLoader.get("cure_lillian");
 
+        public static final CureIdol idol = GirlsLoader.get("cure_idol");
+        public static final CureWink wink = GirlsLoader.get("cure_wink");
+        public static final CureKyunKyun kyunkyun = GirlsLoader.get("cure_kyunkyun");
+        public static final CureZukyoon zukyoon = GirlsLoader.get("cure_zukyoon");
+        public static final CureKiss kiss = GirlsLoader.get("cure_kiss");
+
         public static final CureEcho echo = GirlsLoader.get("cure_echo");
     }
 
