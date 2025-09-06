@@ -112,6 +112,12 @@ public class GirlsLoader {
             entry("cure_nyammy", CureNyammy.class),
             entry("cure_lillian", CureLillian.class),
 
+            entry("cure_idol", CureIdol.class),
+            entry("cure_wink", CureWink.class),
+            entry("cure_kyunkyun", CureKyunKyun.class),
+            entry("cure_zukyoon", CureZukyoon.class),
+            entry("cure_kiss", CureKiss.class),
+
             entry("cure_echo", CureEcho.class)
     );
     private static Map.Entry<String, Class<? extends Girl<?>>>
@@ -146,6 +152,7 @@ public class GirlsLoader {
             "/girls/019_delicious_party.yml",
             "/girls/020_hirogaru_sky.yml",
             "/girls/021_wonderful.yml",
+            "/girls/022_you_and_idol.yml",
             "/girls/movie.yml"
     );
 

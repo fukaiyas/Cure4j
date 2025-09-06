@@ -1,0 +1,195 @@
+cure_idol: &cure_idol
+  girl_name:    cure_idol
+  human_name:   咲良うた
+  precure_name: キュアアイドル
+  cast_name:    松岡美里
+  color:        pink
+  created_date: 2025-02-02 # episode 1
+  birthday:     3/27
+  transform_message: |-
+    プリキュア！ライトアップ！
+    キラキラドレスチェンジ！YEAH!
+    きみと～！ YEAH！
+    一緒にYEAH!
+    キミと歌う、ハートのキラキラ！
+    笑顔ニッコリ、キュアアイドル！
+    ウィーアー！キミとアイドルプリキュア！
+  # extra_names:
+  attack_messages:
+    - |-
+      クライマックスは私！
+      盛り上がっていくよ！
+      キミのハートに
+      とびきり元気をあげるね
+      ゼッタイ！（ゼッタイ！）アイドル！（アイドル！）
+      ドキドキが止まらない！
+      急接近
+      笑顔のユニゾン
+      応えてほしいなっ
+      サンキュー
+      最高のステージで
+      キミと歌を
+      咲かそう
+      プリキュアアイドルスマイリング！
+  transform_calls:
+    - light_up
+idol:
+  <<: *cure_idol
+
+cure_wink: &cure_wink
+  girl_name:    cure_wink
+  human_name:   蒼風なな
+  precure_name: キュアウインク
+  cast_name:    髙橋ミナミ
+  color:        blue
+  created_date: 2025-02-16 # episode 3
+  birthday:     7/6
+  transform_message: |-
+    プリキュア！ライトアップ！
+    キラキラドレスチェンジ！YEAH!
+    きみと～！ YEAH！
+    一緒にYEAH!
+    キミと瞬く、ハートの勇気！
+    お目目パッチン、キュアウインク！
+    ウィーアー！キミとアイドルプリキュア！
+  # extra_names:
+  attack_messages:
+    - |-
+      クライマックスは私！
+      聞いて下さい
+      きらめきへ
+      踏み出そう
+      受け取った勇気つないで
+      まばたきの数だけ
+      五線譜に焼きつけていく
+      今日の優しい音
+      ずっと忘れないよ
+      出会えたキミへと
+      奏でたいいつまでも
+      鳴り止まないメロディー
+      プリキュアウインククレッシェンド！
+  transform_calls:
+    - light_up
+wink:
+  <<: *cure_wink
+
+cure_kyunkyun: &cure_kyunkyun
+  girl_name:    cure_kyunkyun
+  human_name:   紫雨こころ
+  precure_name: キュアキュンキュン
+  cast_name:    高森奈津美
+  color:        purple
+  created_date: 2025-03-23 # episode 7
+  birthday:     5/11
+  transform_message: |-
+    プリキュア！ライトアップ！
+    キラキラドレスチェンジ！YEAH!
+    きみと～！ YEAH！
+    一緒にYEAH!
+    キミと踊る、ハートのリズム！
+    心キュンキュン、キュアキュンキュン！
+    ウィーアー！キミとアイドルプリキュア！
+  # extra_names:
+  attack_messages:
+    - |-
+      クライマックスは私！
+      準備はOK?
+      ねえキミも！
+      かわいーな（キュンキュン！）
+      かっこいーな（キュンキュン！）
+      完全同意に
+      アガる
+      テンション
+      コーレスプリーズ（イェイ☆）
+      とびきりキュンキュン響かせて
+      踊ろう
+      Let's dance!!
+      もう1回（キュンキュン！）
+      アンコール（キュンキュン！）
+      完全ダイスキ
+      ハイなステップが
+      ナンバーワン
+      もっと夢中になれるね
+      こころビート
+      YES!キュンキュン♪
+      プリキュアキュンキュンビート！
+  transform_calls:
+    - light_up
+kyunkyun:
+  <<: *cure_kyunkyun
+
+cure_zukyoon: &cure_zukyoon
+  girl_name:    cure_zukyoon
+  human_name:   プリルン
+  precure_name: キュアズキューン
+  cast_name:    南條愛乃
+  color:        white
+  created_date: 2025-06-15 # episode 19
+  birthday:     10/9
+  transform_message: |-
+    プリキュア！ライトアップ！
+    キラキラショータイム！YEAH!
+    きみと～！ YEAH！
+    一緒にYEAH!
+    ハートをプリっとロックオン！
+    キミとズッキュン、キュアズキューン！
+    ウィーアー！キミとアイドルプリキュア！
+  # extra_names:
+  attack_messages:
+    - |-
+      ふたりの誓い、いま輝け！
+      取り戻したい
+      光の世界
+      その笑顔
+      勇気
+      涙
+      夢
+      希望の兆し
+      キミと明日を
+      願うチカラで
+      うまれる
+      わたし達のハーモニー
+      響け
+      プリキュア！ズキューンキッスディスティニー！
+  transform_calls:
+    - light_up
+zukyoon:
+  <<: *cure_zukyoon
+
+cure_kiss: &cure_kiss
+  girl_name:    cure_kiss
+  human_name:   メロロン
+  precure_name: キュアキッス
+  cast_name:    南條愛乃
+  color:        black
+  created_date: 2025-06-15 # episode 19
+  birthday:     12/07
+  transform_message: |-
+    プリキュア！ライトアップ！
+    キラキラショータイム！YEAH!
+    きみと～！ YEAH！
+    一緒にYEAH!
+    ハートをメロっとひとりじめ！
+    キミと口づけ、キュアキッス！
+    ウィーアー！キミとアイドルプリキュア！
+  # extra_names:
+  attack_messages:
+    - |-
+      ふたりの誓い、いま輝け！
+      取り戻したい
+      光の世界
+      その笑顔
+      勇気
+      涙
+      夢
+      希望の兆し
+      キミと明日を
+      願うチカラで
+      うまれる
+      わたし達のハーモニー
+      響け
+      プリキュア！ズキューンキッスディスティニー！
+  transform_calls:
+    - light_up
+kiss:
+  <<: *cure_kiss

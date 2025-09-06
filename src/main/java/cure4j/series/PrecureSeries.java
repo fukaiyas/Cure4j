@@ -37,6 +37,7 @@ public class PrecureSeries extends Series {
     public final Series deliciousParty = SeriesLoader.get("delicious_party");
     public final Series hirogaruSky = SeriesLoader.get("hirogaru_sky");
     public final Series wonderful = SeriesLoader.get("wonderful");
+    public final Series youAndIdol = SeriesLoader.get("you_and_idol");
 
     public Series find(String seriesName){
         return SeriesLoader.get(seriesName);
